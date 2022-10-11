@@ -1,20 +1,102 @@
 const express = require('express')
 const login_rotas = express.Router()
+const Usuario = require('../model/usuario-model')
 
 login_rotas.get('', async(req, res) => {
 
-    res.send('login é aqui!')
-        //res.render('home/loginPage')
+
+    res.render('home/login')
+
+
+})
+
+login_rotas.post('login', (req, res) => {
 
 
 })
 
 login_rotas.get('/cadastro', async(req, res) => {
 
-    res.send('cadastro é aqui!')
-        //res.render('home/loginPage')
+
+    res.render('home/cadastro')
 
 
 })
+
+login_rotas.post('/add', (req, res) => {
+    var nome = req.body.name
+    var email = req.body.email
+    var password = req.body.password
+    var admin = 0
+    var imguser = req.body.nomediv
+    var pontos = req.body.pontos
+        //console.log(res, nome, email, password, admin, imguser)
+    saveUser(res, nome, email, password, admin, imguser, pontos)
+})
+
+function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos) {
+    var erros = []
+
+    if (!nomeuse || typeof nomeuse == undefined || nomeuse == null) {
+        erros.push({ texto: 'Nome inválido' })
+    }
+    if (nomeuse.length < 2) {
+        erros.push({ texto: 'Nome do produto muito pequenos' })
+    }
+    if (!emailuse || typeof emailuse == undefined || emailuse == null) {
+        erros.push({ texto: 'email inválido' })
+    }
+    if (!passworduse || typeof passworduse == undefined || passworduse == null) {
+        erros.push({ texto: 'password inválido' })
+    }
+    if (passworduse.length < 2) {
+        erros.push({ texto: 'password do user muito pequenos' })
+    }
+    if (!imguser || typeof imguser == undefined || imguser == null) {
+        erros.push({ texto: 'Imagem inválido' })
+    }
+    if (erros.length > 0) {
+        res.render('home/add_usuario', { erros: erros })
+    } else {
+        Usuario.findOne({
+            where: { email: emailuse }
+        }).then((usuario) => {
+            if (usuario) {
+                console.log(usuario.email)
+                res.render('home/add_usuario', { error_msg: 'Já existe usuario com esse email!' })
+            } else {
+                bcrypy.genSalt(10, (erro, salt) => {
+                    bcrypy.hash(passworduse, salt, (erro, hash) => {
+                        if (erro) {
+                            res.render('home/', { error_msg: 'Houve um erro durante o salvamento do usuario!' })
+                        }
+
+                        passworduse = hash
+
+                        Usuario.create({
+                            nome: nomeuse,
+                            email: emailuse,
+                            password: passworduse,
+                            admin: adminuse,
+                            imguser: imguser,
+                            pontos: pontos
+                        }).then(() => {
+
+                            res.render('home/loginPage', { success_msg: 'Usuario adicionado com sucesso!' })
+                        }).catch((erro) => {
+                            console.log('erro: ' + erro)
+                            res.render('/')
+                        })
+
+                    })
+                })
+            }
+        }).catch((err) => {
+            res.render('home/add_usuario', { error_msg: 'erro interno na hora de cadastra user!' + err })
+        })
+
+
+    }
+}
 
 module.exports = login_rotas
