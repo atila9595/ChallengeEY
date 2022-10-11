@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- Links do bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Home</title>
+</head>
+<body class="corEY">
+
+<nav  class="navbar navbar-expand-lg">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="pagAdm.html">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/640px-EY_logo_2019.svg.png"
+            height="45"
+            alt="MDB Logo"
+            loading="lazy"
+            style="padding-bottom: 10px;"
+          />
+        </a>
+  
+      </div>
+     
+      
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://cdn.create.vista.com/api/media/medium/471200328/stock-vector-big-cogwheel-gold-plated-metalic?token="
+              class="rounded-circle"
+              height="45"
+              loading="lazy"
+            />
+          </a>
+      
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+
+
+  <!--Seção responsavel por todo conteudo do site-->
+
+  <section class="cardMissoes">
+    <img id="imgMissao" style="padding-right: 0;" src="../static/images/imgcadastrar.png" alt="">
+    <script>
+      AOS.init();
+    </script>
+    <!--Card de cada missão-->
+    
+
+    <div class="CadastroProduto" style="padding: 20px; margin-bottom: 5%;">
+    
+        <!---Nome do produto-->
+        <h5 style="margin-top: 2%; color: #ffe600;">Titulo da missão:</h5>
+        <input style="background-color: #2e2e38; color:  #fff; border: 1px solid #ffe600;"  name="nome-produto" style="margin-top: 2%;" class="form-control" type="text" placeholder="Desenvolvimento com Flutter">
+        <h5 style="margin-top: 2%;color: #ffe600;">Descrição da missão:</h5>
+        <!---Descrição do produto-->
+        <textarea name="comentario"  placeholder="Descrição referente ao seu produto" style="resize: none;color:  #fff;height: 150px; margin-top: 2%;background-color: #2e2e38; border: 1px solid #ffe600;" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <!---Categoria-->
+        <h5 style="margin-top: 2%; color: #ffe600;">Selecione a categoria da missão</h5>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label style="color: #fff;" class="form-check-label" for="flexRadioDefault1">
+              Soft Skill
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label style="color: #fff;" class="form-check-label" for="flexRadioDefault2">
+              Hard Skill
+            </label>
+          </div>
+
+    <h5 style="margin-top: 2%; color: #ffe600;">Pontuação:</h5>
+    <input name="nome-produto" style="margin-top: 2%; background-color: #2e2e38;color:  #fff; border: 1px solid #ffe600;" class="form-control" type="text" placeholder="150 pontos">
+
+           
+    
+       
+
+        </div>
+
+
+        <div style="text-align: center; margin-bottom: 5%; margin-top: 2%;">
+           <button style="margin-bottom: 5%;" class="btnPublicar" onclick="location.href='/templates/pagAdm.html'">Publicar</button>
+        </div>
+
+      </div>
+
+  </section>
+
+    
+</body>
+
+</html>
+
+<!-- JS do MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>

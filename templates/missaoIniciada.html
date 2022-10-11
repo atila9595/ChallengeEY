@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- Links do bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Sobre a missão</title>
+</head>
+<body class="corEY">
+
+<nav  class="navbar navbar-expand-lg">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="home.html">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/640px-EY_logo_2019.svg.png"
+            height="45"
+            alt="MDB Logo"
+            loading="lazy"
+            style="padding-bottom: 10px;"
+          />
+        </a>
+  
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <a style="color: #fff;" class="text-reset me-3 text-white" href="perfil.html">
+            <i id="estrelaico" class="fas fa-star"> 4</i>
+        </a>
+
+        <a style="color: #fff;" class="text-reset me-4 text-white" href="regras.html">
+            <i id="estrelaico" class="fas fa-scroll"></i>
+        </a>
+        <a style="color: #fff;" class="text-reset me-4 text-white" href="perfil.html">
+            <i id="estrelaico" class="fas fa-map-marked-alt"></i>
+        </a>
+  
+      
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+              class="rounded-circle"
+              height="45"
+              loading="lazy"
+            />
+          </a>
+      
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+
+
+  <!--Seção responsavel por todo conteudo do site-->
+
+  <section class="cardMissoes">
+    <div class="col">
+        <a href="home.html">
+      <img style="float: left; padding:20px;" src="../static/images/voltar.png" alt="">
+       </a>
+     </div>
+
+    <img id="imgMissao" src="../static/images/imgprogresso.png" alt="">
+    <script>
+      AOS.init();
+    </script>
+
+  <div data-aos="zoom-in" class="col-xl-12 col-md-12">
+    <div id="cardaMissao" style ="border: 0;"class="card">
+      <div class="card-content">
+        <div id="cardaMissao2" class="card-body cleartfix">
+          <div class="media align-items-stretch">
+            <div class="align-self-center">
+              <img src="../static/images/hardskills.png" alt="">
+            </div>
+            <div class="media-body">
+              <h4 id="tituloMissao">Desenvolvimento Web Completo 2022 - 20 cursos + 20 projetos</h4>
+              <span>Domine Web - 20 Cursos - HTML5, CSS3, SASS, Bootstrap, JS, ES6, PHP 7, OO, MySQL, JQuery, MVC, APIs, IONIC e muito mais</span>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</a>
+
+<div class="progress" style="height: 20px;">
+    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><b id="porcentagemmissao">25%</b></div>
+  </div>
+
+<button id="btnFinalizar" type="button" class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">Finalizar Missão</button>
+<button id="btnAbandonar" type="button" class="btn btn-warning btn-rounded" data-mdb-ripple-color="dark">Abandonar missão</button>
+
+
+
+
+
+
+  </section>
+
+    
+</body>
+
+</html>
+
+<!-- JS do MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>

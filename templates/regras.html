@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Links do bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Sobre a missão</title>
+  </head>
+  <body class="corEY">
+    <nav class="navbar navbar-expand-lg">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Navbar brand -->
+          <a class="navbar-brand mt-2 mt-lg-0" href="home.html">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/640px-EY_logo_2019.svg.png"
+              height="45"
+              alt="MDB Logo"
+              loading="lazy"
+              style="padding-bottom: 10px"
+            />
+          </a>
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+          <!-- Icon -->
+          <a
+            style="color: #fff"
+            class="text-reset me-3 text-white"
+            href="perfil.html"
+          >
+            <i id="estrelaico" class="fas fa-star"> 4</i>
+          </a>
+
+          <a
+            style="color: #fff"
+            class="text-reset me-4 text-white"
+            href="regras.html"
+          >
+            <i id="estrelaico" class="fas fa-scroll"></i>
+          </a>
+          <a
+            style="color: #fff"
+            class="text-reset me-4 text-white"
+            href="perfil.html"
+          >
+            <i id="estrelaico" class="fas fa-map-marked-alt"></i>
+          </a>
+
+          <!-- Avatar -->
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                class="rounded-circle"
+                height="45"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+        <!-- Right elements -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <!--Seção responsavel por todo conteudo do site-->
+
+    <section class="cardMissoes">
+        <div class="col">
+            <a href="home.html">
+          <img style="float: left; padding:20px;" src="../static/images/voltar.png" alt="">
+           </a>
+         </div>
+      <img id="imgMissao" src="../static/images/imgregras.png" alt="" />
+      <br>
+      <script>
+        AOS.init();
+      </script>
+
+      <br />
+      <div style="display: inline-flex">
+        <img src="../static/images/medalamarelo.png" alt="" />
+        <h4 id="amareloEy" style="padding-top: 15%;font-weight: bold;">Níveis</h4>
+      </div>
+      <br>
+      <br>
+      
+
+      <p id="corf">
+        Veja abaixo a quantidade de pontos necessários para sua evolução:
+      </p>
+
+      <div class="row">
+        <div class="col">
+          <div style="display: inline-flex; ">
+            <img
+              style="width: 64px; height: 64px; margin-top: 5%"
+              src="../static/images/medalamarelo.png"
+              alt=""
+            />
+            <div >
+              <h4 id="amareloEy" style="padding-top: 15%">Iniciante</h4>
+              <p style id="corf">0 Pontos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div style="display: inline-flex; ">
+            <img
+              style="width: 64px; height: 64px; margin-top: 5%"
+              src="../static/images/medallaranja.png"
+              alt=""
+            />
+            <div >
+              <h4 id="amareloEy" style="padding-top: 15%">Básico</h4>
+              <p style id="corf">3500 Pontos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div style="display: inline-flex; ">
+            <img
+              style="width: 64px; height: 64px; margin-top: 5%"
+              src="../static/images/medalroxa.png"
+              alt=""
+            />
+            <div >
+              <h4 id="amareloEy" style="padding-top: 15%">Intermediário</h4>
+              <p style id="corf">7200 Pontos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div style="display: inline-flex; ">
+            <img
+              style="width: 64px; height: 64px; margin-top: 5%"
+              src="../static/images/medalazul.png"
+              alt=""
+            />
+            <div >
+              <h4 id="amareloEy" style="padding-top: 15%">Avançado</h4>
+              <p style id="corf">9800 Pontos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div style="display: inline-flex; ">
+            <img
+              style="width: 64px; height: 64px; margin-top: 5%"
+              src="../static/images/medalazulescuro.png"
+              alt=""
+            />
+            <div >
+              <h4 id="amareloEy" style="padding-top: 15%">Expert</h4>
+              <p style id="corf">15600 Pontos</p>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <br>
+    <br>
+
+      <div style="display: inline-flex; ">
+      <img id="imgestrela" src="../static/images/imgestrela.png" alt="">
+      <h4  style="padding-top: 7%; padding-left: 2%; font-weight: bold;" id="amareloEy">Perfomance</h4>
+    </div>
+    <p id="corf"> Sua performance em cada nível é avaliada por estrelas <br>O que pode melhorar sua performance?</p>
+    <p id="corf">- Não abandonar missões</p>
+    <p id="corf">- Finalizar dentro do prazo</p>
+    <p id="corf">- Ter um bom desempenho em uma missão específica</p>
+    <p id="corf">- Uma sequência de bons resultados nas missões</p>
+
+    <br>
+    <br>
+
+
+
+
+
+    </section>
+  </body>
+</html>
+
+<!-- JS do MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+></script>
