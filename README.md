@@ -64,22 +64,23 @@ npm install --save passport-local
 
 npm install aos --save
 ```
-### Configuração do banco de dados local
-* no workbench do **_MySQL_**  crie um **_Schema_** chamado `challengeey`
-* no arquivo db.js localizado no caminho ChallengeEY/models/db.js troque as seguintes informações:
-    ```js
-    const sequelize = new Sequelize('challengeey', 'username', 'senha', {
-        host: 'localhost',
-        dialect: 'mysql'
-    })
-    ```
-    sendo username, o usuario do seu banco de dados e senha, a senha do seu banco de dados
-* em **_`ChallengeEY/models/missao-model.js`_** e em **_`ChallengeEY/models/usuario-model.js`_** descomente as seguintes linhas:
-    ```js
-        Usuaro.sync({ force: true })
 
-        Missao.sync({ force: true })
-    ```
+* Configuração do banco de dados local
+    * no workbench do **_MySQL_**  crie um **_Schema_** chamado `challengeey`
+    * no arquivo db.js localizado no caminho ChallengeEY/models/db.js troque as seguintes informações:
+        ```js
+        const sequelize = new Sequelize('challengeey', 'username', 'senha', {
+            host: 'localhost',
+            dialect: 'mysql'
+        })
+        ```
+    * sendo username, o usuario do seu banco de dados e senha, a senha do seu banco de dados
+    * em **_`ChallengeEY/models/missao-model.js`_** e em **_`ChallengeEY/models/usuario-model.js`_** descomente as seguintes linhas:
+        ```js
+            Usuaro.sync({ force: true })
+
+            Missao.sync({ force: true })
+        ```
     * rode utilizando `node app.js` ou `nodemon app.js`
     * isso criará as tabelas no banco de dados
     * pare de rodar o app utilizando `Ctrl + C`
