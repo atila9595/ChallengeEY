@@ -99,7 +99,7 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
 login_rotas.post('/loginAuth', (req, res, next) => {
 
     passport.authenticate("local", {
-        successRedirect: "/user",
+        successRedirect: "/user/missoes",
         failureRedirect: "/home/login",
         failureFlash: true
     })(req, res, next)

@@ -1,12 +1,4 @@
 
-.whiteScreen {
-    background-image: linear-gradient(to right, gray, white);
-}
-
-.blackScreen {
-    background-image: linear-gradient(to right, black, gray);
-}
-
 input {
     width: 50%;
     margin-left: 45%;
