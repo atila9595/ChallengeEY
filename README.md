@@ -67,7 +67,7 @@ npm install aos --save
 
 * Configuração do banco de dados local
     * no workbench do **_MySQL_**  crie um **_Schema_** chamado `challengeey`
-    * no arquivo db.js localizado no caminho ChallengeEY/models/db.js troque as seguintes informações:
+    * no arquivo db.js localizado no caminho **_`ChallengeEY/models/db.js`_** troque as seguintes informações:
         ```js
         const sequelize = new Sequelize('challengeey', 'username', 'senha', {
             host: 'localhost',
