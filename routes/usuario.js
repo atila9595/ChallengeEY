@@ -6,7 +6,7 @@ const { json } = require('body-parser')
 
 
 
-user_rotas.get('/', async(req, res) => {
+user_rotas.get('/missoes', async(req, res) => {
 
     res.render('usuario/missoes')
 
