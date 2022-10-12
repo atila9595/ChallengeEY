@@ -1,8 +1,8 @@
 const express = require('express')
 const user_rotas = express.Router()
-const Usuario = require('../model/usuario-model')
+const Usuario = require('../models/usuario-model')
     //const passport = require("passport")
-    //var bcrypy = require('bcryptjs');
+var bcrypy = require('bcryptjs');
 
 
 user_rotas.get('/', (req, res) => {
@@ -19,7 +19,7 @@ user_rotas.post('/add', (req, res) => {
     var password = req.body.password
     var admin = 0
     var imguser = req.body.nomediv
-        //console.log(res, nome, email, password, admin, imguser)
+    console.log(nome, email, password, admin, imguser)
     saveUser(res, nome, email, password, admin, imguser)
 })
 
@@ -70,7 +70,7 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser) {
                             imguser: imguser
                         }).then(() => {
 
-                            res.render('home/loginPage', { success_msg: 'Usuario adicionado com sucesso!' })
+                            res.render('/', { success_msg: 'Usuario adicionado com sucesso!' })
                         }).catch((erro) => {
                             console.log('erro: ' + erro)
                             res.render('home/addusuario')

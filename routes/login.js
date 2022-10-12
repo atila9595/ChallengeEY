@@ -1,6 +1,8 @@
 const express = require('express')
 const login_rotas = express.Router()
-const Usuario = require('../model/usuario-model')
+const Usuario = require('../models/usuario-model')
+const passport = require("passport")
+var bcrypy = require('bcryptjs');
 
 login_rotas.get('', async(req, res) => {
 
@@ -29,8 +31,8 @@ login_rotas.post('/add', (req, res) => {
     var password = req.body.password
     var admin = 0
     var imguser = req.body.nomediv
-    var pontos = req.body.pontos
-        //console.log(res, nome, email, password, admin, imguser)
+    var pontos = 0
+        //console.log(nome, email, password, admin, imguser)
     saveUser(res, nome, email, password, admin, imguser, pontos)
 })
 
@@ -63,12 +65,12 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
         }).then((usuario) => {
             if (usuario) {
                 console.log(usuario.email)
-                res.render('home/add_usuario', { error_msg: 'Já existe usuario com esse email!' })
+                res.render('home/cadastro', { error_msg: 'Já existe usuario com esse email!' })
             } else {
                 bcrypy.genSalt(10, (erro, salt) => {
                     bcrypy.hash(passworduse, salt, (erro, hash) => {
                         if (erro) {
-                            res.render('home/', { error_msg: 'Houve um erro durante o salvamento do usuario!' })
+                            res.render('home/cadastro', { error_msg: 'Houve um erro durante o salvamento do usuario!' })
                         }
 
                         passworduse = hash
@@ -82,17 +84,17 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
                             pontos: pontos
                         }).then(() => {
 
-                            res.render('home/loginPage', { success_msg: 'Usuario adicionado com sucesso!' })
+                            res.render('home/login', { success_msg: 'Usuario adicionado com sucesso!' })
                         }).catch((erro) => {
                             console.log('erro: ' + erro)
-                            res.render('/')
+                            res.render('home/cadastro')
                         })
 
                     })
                 })
             }
         }).catch((err) => {
-            res.render('home/add_usuario', { error_msg: 'erro interno na hora de cadastra user!' + err })
+            res.render('home/cadastro', { error_msg: 'erro interno na hora de cadastra user!' + err })
         })
 
 
