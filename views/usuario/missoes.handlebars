@@ -13,6 +13,12 @@
       AOS.init();
     </script>
     <!--Card de cada missão-->
+    {{missoes}}
+{{#each missoes}}
+<li><h2>{{missao.titulo}}</h2></li>
+<li><h2>{{missoes.descricao}}</h2></li>
+    
+{{/each}}
 <a href="missao.html">
     <div data-aos="zoom-in" class="col-xl-12 col-md-12">
       <div id="cardaMissao" style ="border: 0;"class="card">
