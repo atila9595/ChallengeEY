@@ -25,6 +25,7 @@ Temos a missão de gameficar o processo de seleção de candidatos, então fizem
 ![alt text](./public/images/PaginaLogin.PNG "Página de login")
 ![alt text](./public/images/PaginaCadastro.PNG "Página de Cadastro")
 ![alt text](./public/images/ListaMissao.PNG "Página de Lista de Missões")
+![alt text](./public/images/telaRegras.PNG "Página de Regras de Pontuação")
 ![alt text](./public/images/DescMissao.PNG "Página de Descrição da Missão")
 ![alt text](./public/images/ProgressoMissao.PNG "Página de Progresso da Missão")
 
