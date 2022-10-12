@@ -200,3 +200,66 @@ padding-right: 12%;
         border-radius: 5px;
         border: 1px solid #f0bc44;
     }
+
+    .profile-card-5{
+        margin-top:20px;
+    }
+    .profile-card-5 .btn{
+        border-radius:2px;
+        text-transform:uppercase;
+        font-size:12px;
+        padding:7px 20px;
+    }
+    .profile-card-5 .card-img-block {
+        width: 91%;
+        margin: 0 auto;
+        position: relative;
+        top: -20px;
+        
+    }
+    .profile-card-5 .card-img-block img{
+        border-radius:5px;
+        box-shadow:0 0 10px rgba(0,0,0,0.63);
+    }
+    .profile-card-5 h5{
+        color:#ffe600;
+        font-weight:600;
+    }
+    .profile-card-5 p{
+        font-size:14px;
+        font-weight:300;
+    }
+    .profile-card-5 .btn-primary{
+        background-color:#ffe600;
+        border-color:#ffe600;
+    }
+
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto; 
+    }
+    .flex > div {
+        flex: 1 1 200px;
+        margin: 10px;
+    }
+
+    #corCard{
+        background-color: #2e2e3841;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+    }
+    .alinhaCard{
+       margin-right: auto;
+        margin-left: auto;
+    }
+    #imgPerfil{
+        width: 75px;
+        height: 75px;
+    }
+
+    .tituloNome{
+        color: #fff;
+        font-weight: bold;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
