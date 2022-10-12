@@ -72,4 +72,28 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
     }
 }
 
+admin_rotas.get('/listaUsuarios', async(req, res) => {
+
+
+    res.render('admin/listaUsuarios')
+
+
+})
+
+admin_rotas.get('/pagUsuarios', async(req, res) => {
+
+
+    res.render('admin/pagUsuarios')
+
+
+})
+
+admin_rotas.get('/pagAdmin', async(req, res) => {
+
+
+    res.render('admin/pagAdmin')
+
+
+})
+
 module.exports = admin_rotas
