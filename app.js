@@ -6,7 +6,8 @@ const cors = require('cors')
 const app = express()
 const user = require('./routes/usuario')
 const login = require('./routes/login')
-    //rotas
+const admin = require('./routes/admin')
+
 const path = require('path')
 const session = require('express-session')
 const flash = require('connect-flash')
@@ -54,6 +55,7 @@ app.use(express.urlencoded({ limit: '50mb' }));
 //Rotas
 app.use('/user', user)
 app.use('/', login)
+app.use('/admin', admin)
 
 //Outros
 const PORT = 8081

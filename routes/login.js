@@ -12,11 +12,6 @@ login_rotas.get('', async(req, res) => {
 
 })
 
-login_rotas.post('login', (req, res) => {
-
-
-})
-
 login_rotas.get('/cadastro', async(req, res) => {
 
 
@@ -104,7 +99,7 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
 login_rotas.post('/loginAuth', (req, res, next) => {
 
     passport.authenticate("local", {
-        successRedirect: "/home",
+        successRedirect: "/user",
         failureRedirect: "/home/login",
         failureFlash: true
     })(req, res, next)
