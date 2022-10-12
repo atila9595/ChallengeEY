@@ -15,14 +15,14 @@
                 alt="">
 
               <h3 class="mb-5">Fazer login</h3>
-
+              <form action="/loginAuth" method="post">
               <div class="form-outline mb-4">
-                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="email"/>
                 <label class="form-label" for="typeEmailX-2">Email</label>
               </div>
 
               <div class="form-outline mb-4">
-                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" name="password"/>
                 <label class="form-label" for="typePasswordX-2">Senha</label>
               </div>
 
@@ -31,7 +31,7 @@
               </a>
 
               <button class="btn btn-warning btn-lg btn-block" id="corBtnLogin" type="submit"><b>Entrar</b></button>
-
+              </form>
               <hr class="my-4">
 
               

@@ -101,4 +101,21 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
     }
 }
 
+login_rotas.post('/loginAuth', (req, res, next) => {
+
+    passport.authenticate("local", {
+        successRedirect: "/home",
+        failureRedirect: "/home/login",
+        failureFlash: true
+    })(req, res, next)
+
+})
+
+login_rotas.get("/logout", (req, res) => {
+    req.logout(req.user, err => {
+        if (err) return next(err);
+        res.redirect("/home");
+    });
+});
+
 module.exports = login_rotas
