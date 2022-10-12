@@ -60,6 +60,8 @@ npm install --save bcryptjs
 npm install --save passport
 
 npm install --save passport-local
+
+npm install aos --save
 ```
 * rode utilizando `node app.js` ou `nodemon app.js`
 * Pronto > Você acaba de executar o aplicativo de gameficação de processo de seleção 😄
