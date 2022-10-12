@@ -74,7 +74,7 @@ Como clonar o repositório:
 ~~~
 ## Vídeo demonstrativo
 
-[![youtube.com](./public/images/EY_logo_2019.png)](https://youtu.be/HFOk3cagoPs)
+[![youtube.com](./public/images/EY.jpg)](https://youtu.be/HFOk3cagoPs)
 
 ## Referências 
 
