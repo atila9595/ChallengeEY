@@ -1,0 +1,67 @@
+<section class="cardMissoes">
+    <div class="col">
+        <a href="/user/missoes">
+            <img style="float: left; padding:20px;" src="/images/voltar.png" alt="">
+        </a>
+    </div>
+    <script>
+        AOS.init();
+    </script>
+    <img id="imgMissao" src="/images/imgdetalhes2.png" alt="">
+
+    <div data-aos="zoom-in" class="col-xl-12 col-md-12">
+        <div id="cardaMissao" style="border: 0;" class="card">
+            <div class="card-content">
+                <div id="cardaMissao2" class="card-body cleartfix">
+                    <div class="media align-items-stretch">
+                        <div class="align-self-center">
+                            <img src="/images/hardskills.png" alt="">
+                        </div>
+                        <div class="media-body">
+                            <h4 id="tituloMissao">Desenvolvimento Web Completo 2022 - 20 cursos + 20 projetos</h4>
+                            <span>Domine Web - 20 Cursos - HTML5, CSS3, SASS, Bootstrap, JS, ES6, PHP 7, OO, MySQL,
+                                JQuery, MVC, APIs, IONIC e muito mais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </a>
+
+    <h4 id="amareloEy">+150 Pontos</h4>
+
+    <button data-mdb-toggle="modal" data-mdb-target="#exampleModal" id="btnIniciar" type="button"
+        class="btn btn-warning btn-rounded" data-mdb-ripple-color="dark">Iniciar missão</button>
+
+    <p id="descMissaotxt">Criar aplicações WEB: Do front ao back-end e banco de dados com HTML5, CSS3, BootStrap 4, JS,
+        ES6, ES7, PHP 7, OO, MySQL, JQuery, MVC, API, IONIC e Wordpress.</p>
+    <p id="descMissaotxt">Como tornar suas habilidades em desenvolvimento web uma atividade remunerada, trabalhando de
+        onde quiser.</p>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="imgModal" src="/images/imgmodal.webp" alt="">
+                    <h4>Deseja iniciar a missão?</h4>
+                    <p>Ao clicar em Aceitar a missão será iniciada e o tempo para completa-lá também, você pode recusar
+                        também mas isso descontará de sua pontuação do nível.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" style="color: #fff;" class="btn btn-danger"
+                        data-mdb-dismiss="modal">Cancelar</button>
+                    <a href="/user/progMissao">
+                        <button type="button" class="btn btn-success">Aceitar Missão</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

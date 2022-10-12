@@ -32,5 +32,13 @@ user_rotas.get('/index', (req, res) => {
     res.render('user/index')
 })
 
+user_rotas.get('/descMissao', (req, res) => {
+    res.render('usuario/descMissao')
+})
+
+user_rotas.get('/progMissao', (req, res) => {
+    res.render('usuario/progMissao')
+})
+
 
 module.exports = user_rotas
