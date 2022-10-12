@@ -68,7 +68,7 @@ Como clonar o repositório:
 
 ~~~wsl2   
     cd /home/Challenge
-    git clone https://github.com/atila9595/ChallengeEY
+    git clone https://github.com/atila9595/ChallengeEY.git
     cd ChallengeEY
     ls
 ~~~
