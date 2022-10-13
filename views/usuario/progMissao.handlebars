@@ -48,8 +48,8 @@
     {{#if user.admin}}
 
     {{else}}
-    <button id="btnFinalizar" type="button" class="btn btn-outline-warning btn-rounded"
-        data-mdb-ripple-color="dark">Finalizar Missão</button>
+    <a href="/user/progMissaoAtual/{{miss.id}}"><button id="btnFinalizar" type="button" class="btn btn-outline-warning btn-rounded"
+        data-mdb-ripple-color="dark">Finalizar Missão</button></a>
     <button id="btnAbandonar" type="button" class="btn btn-warning btn-rounded" data-mdb-ripple-color="dark">Abandonar
         missão</button>
     {{/if}}
