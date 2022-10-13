@@ -37,7 +37,7 @@ Após a autenticação o Firebase redireciona os usuários para o Node.js .  O N
  A nossa aplicação está usando uma biblioteca que cria modelos de página web reutilizáveis, chamada Handlebars. A escolha do Handlebars se deve a organização pois ele separa os modelos de negócio e os templates, deixando a página mais limpa e com isso melhorando a capacidade de manutenção e escalabilidade do aplicativo. A nossa arquitetura será Orientada a eventos, pois teremos vários eventos e gamificação, com isso criaremos pontuações sendo assim precisamos executar processos assincronos que nos de intervalos de tempo confiáveis entre a chamada e a resposta.
 
 ### Desenho Da arquitetura
-![alt text](./public/images/Desenho_Arquitetura.PNG "Nossa Arquitetura")
+![alt text](./public/images/Desenho_Arquitetura.png "Nossa Arquitetura")
 
 ### UX
 ![alt text](./public/images/PaginaLogin.PNG "Página de login")
