@@ -36,7 +36,7 @@ O Firebase é um serviço de suporte à autenticação usando senhas, números d
 Após a autenticação o Firebase redireciona os usuários para o Node.js .  O Node.js é uma plataforma de aplicação, que utiliza a linguagem de programação javascript feita com o objetivo de desenvolver aplicativos web. O Node.js é baseado em eventos, é um loop de eventos com thread único. A thread Principal é responsável pela parte síncrona da  aplicação, para parte assíncrona é alocado pela thread principal, uma thread em segundo plano para processar a operação. O nó é chamado de thread único pois todas as solicitações são recebidas nele, apesar de termos vários processos rodando em segundo plano são  sempre controlados pelo thread principal.Nós escolhemos o Node.js pois é uma aplicação que atende a maturidade técnica da equipe, visto que se trabalha em javascript, possuindo fácil integração com várias ferramentas de nuvem e além disso é muito leve, economizando muito o valor de infraestrutura. Além disso, temos um ecossistema grande em javascript, isso nos permite trabalhar com inúmeras bibliotecas e frameworks para o node.js.
  A nossa aplicação está usando uma biblioteca que cria modelos de página web reutilizáveis, chamada Handlebars. A escolha do Handlebars se deve a organização pois ele separa os modelos de negócio e os templates, deixando a página mais limpa e com isso melhorando a capacidade de manutenção e escalabilidade do aplicativo. A nossa arquitetura será Orientada a eventos, pois teremos vários eventos e gamificação, com isso criaremos pontuações sendo assim precisamos executar processos assincronos que nos de intervalos de tempo confiáveis entre a chamada e a resposta.
 
-### Desenho Da arquitetura
+### Desenho Da Arquitetura
 ![alt text](./public/images/Desenho_Arquitetura.png "Nossa Arquitetura")
 
 ### UX
@@ -47,7 +47,7 @@ Após a autenticação o Firebase redireciona os usuários para o Node.js .  O N
 ![alt text](./public/images/telaRegras.PNG "Tela de Regras")
 ![alt text](./public/images/ProgressoMissao.PNG "Página de Progresso da Missão")
 
-### Protótipo não Funcional
+### Protótipo Não Funcional
 [Nesse Link](https://xd.adobe.com/view/8b57abfc-7e1a-447c-9683-856d348cc463-de04/?fullscreen)
 
 ## Como usar
