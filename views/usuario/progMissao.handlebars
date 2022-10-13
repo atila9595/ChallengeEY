@@ -1,10 +1,10 @@
 {{>_navbar}}
-    {{#if error}}
-        <div class="alert alert-danger">{{error}}</div>
-    {{else}}
+{{#if error}}
+<div class="alert alert-danger">{{error}}</div>
+{{else}}
 
-    {{/if}}
-    {{>_msg}}
+{{/if}}
+{{>_msg}}
 
 <section class="cardMissoes">
     <div class="col">
@@ -28,8 +28,10 @@
                         </div>
                         <div class="media-body">
                             <h4 id="tituloMissao">{{miss.titulo}}</h4>
-                            <span>{{miss.descricao}}</span>
                         </div>
+                    </div>
+                    <div class="media-body">
+                        <p id="descMissaotxt">{{miss.descricao}}</p>
                     </div>
                 </div>
             </div>
