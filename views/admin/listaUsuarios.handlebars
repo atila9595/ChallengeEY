@@ -16,21 +16,22 @@
     <div class="flex">
 
         <!--Card de cada perfil-->
+        {{#each usuarios}}
         <div class="col-md-4 mt-4">
             <div id="corCard" class="card profile-card-5">
                 <div class="card-img-block">
-                    <a href="/admin/pagUsuarios">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c"
+                    <a href="/admin/pagUsuarios/{{id}}">
+                        <img class="card-img-top" src="{{imguser}}"
                             alt="Card image cap">
                     </a>
                 </div>
                 <div class="card-body pt-0">
-                    <h5 class="card-title">Carlos Almeida</h5>
+                    <h5 class="card-title">{{nome}}</h5>
 
                 </div>
             </div>
         </div>
-
+        {{/each}}
         <div class="col-md-4 mt-4">
             <div id="corCard" class="card profile-card-5">
                 <div class="card-img-block">
