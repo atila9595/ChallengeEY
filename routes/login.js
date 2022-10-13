@@ -10,7 +10,7 @@ const adminList = [
     "cdecastrohenriques@gmail.com",
     "teste1@gmail.com",
     "age@fiap.com.br"
-    ]
+]
 
 
 login_rotas.get('', lougado, async(req, res) => {
@@ -34,9 +34,9 @@ login_rotas.post('/add', (req, res) => {
     var nome = req.body.name
     var email = req.body.email
     var password = req.body.password
-    if(adminList.includes(email)) {
-        var  admin = 1
-    } else { 
+    if (adminList.includes(email)) {
+        var admin = 1
+    } else {
         var admin = 0
     }
     var imguser = req.body.nomediv
@@ -148,7 +148,7 @@ login_rotas.post('/loginAuth', (req, res, next) => {
 login_rotas.get("/logout", (req, res) => {
     req.logout(req.user, err => {
         if (err) return next(err);
-        res.redirect("/home");
+        res.redirect("/");
     });
 });
 
