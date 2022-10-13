@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Links do bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+<!--Biblioteca que gera o grafico-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+    <title>Perfil</title>
+  </head>
+  <body class="corEY">
+    <nav class="navbar navbar-expand-lg">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Navbar brand -->
+          <a class="navbar-brand mt-2 mt-lg-0" href="home.html">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/EY_logo_2019.svg/640px-EY_logo_2019.svg.png"
+              height="45"
+              alt="MDB Logo"
+              loading="lazy"
+              style="padding-bottom: 10px"
+            />
+          </a>
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+          <!-- Icon -->
+          <a
+            style="color: #fff"
+            class="text-reset me-3 text-white"
+            href="perfil.html"
+          >
+            <i id="estrelaico" class="fas fa-star"> 4</i>
+          </a>
+
+          <a
+            style="color: #fff"
+            class="text-reset me-4 text-white"
+            href="regras.html"
+          >
+            <i id="estrelaico" class="fas fa-scroll"></i>
+          </a>
+          <a
+            style="color: #fff"
+            class="text-reset me-4 text-white"
+            href="perfil.html"
+          >
+            <i id="estrelaico" class="fas fa-map-marked-alt"></i>
+          </a>
+
+          <!-- Avatar -->
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle d-flex align-items-center hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                class="rounded-circle"
+                height="45"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+        <!-- Right elements -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <!--Seção responsavel por todo conteudo do site-->
+
+    <section  class="cardMissoes">
+     
+        <br>
+            <img id="imgPerfil2" class="rounded-circle" src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c" alt="Card image cap">
+            
+        <h4 class="tituloNomePerfil">Carlos Almeida</h4>
+        <br>
+
+
+        
+        <style>
+            #imgPerfil2{
+                width: 200px;
+                height: 200px;
+                margin-bottom: 3%;
+            }
+            .tituloNomePerfil{
+                font-size: 30px;
+                color: #fff;
+                font-weight: bold;
+            }
+            #estrelaperfil{
+                color: #ffe600;
+                height: 50px;
+            }
+           
+        </style>
+        <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
+        <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
+        <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
+        <i id="" class="fas fa-star fa-2x"></i>
+        <i id="" class="fas fa-star fa-2x"></i>
+        
+        <br>
+        <br>
+
+        <div style="display: inline-flex;margin-bottom: 2%;">
+            <img src="../static/images/medalamarelo.png" alt="" />
+            <h4 id="amareloEy" style="padding-top: 15%;font-weight: bold;">1575 Pontos</h4>
+          </div>
+          <br>
+
+          <div style="display: inline-flex;margin-bottom: 2%; width: 90%; padding-left: 15%;">
+          <img
+              style="width: 64px; height: 64px; "
+              src="../static/images/medallaranja.png"
+              alt=""
+            />
+          <div class="progress" style="height: 20px; width: 70%; margin-top: auto;">
+            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><b id="porcentagemmissao">45%</b>
+            </div> 
+          </div>
+        </div>
+        
+        <br>
+        <br>
+
+        <img src="../static/images/hardskills.png" alt="">
+        <h4 class="tituloNome">Hard Skills</h4>
+      
+        <div style="width:50%; height:50%; margin: auto; background-color: #fff; border-radius: 10px;">
+            <canvas  id="myChart"></canvas>
+          </div>
+
+        <br>
+        <br>
+
+        <img src="../static/images/soft-skills.png" alt="">
+        <h4 class="tituloNome">Soft Skills</h4>
+
+
+         
+        <div style="width:50%; height:50%; margin: auto; border-radius: 10px; background: #fff;">
+            <canvas  id="myChart2"></canvas>
+          </div>
+          
+
+             
+          <script>
+       
+            const data = {
+        labels: [
+          'React',
+          'HTML',
+          'CSS',
+          'Javacript',
+          'Bootstrap',
+          'Angular',
+          'Jquery'
+        ],
+        datasets: [{
+          label: 'Evolução no ultimo mês',
+          data: [65, 80, 90, 81, 68, 55, 70],
+          fill: true,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgb(255, 99, 132)',
+          pointBackgroundColor: 'rgb(255, 99, 132)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgb(255, 99, 132)'
+        }]
+      };
+      const config = {
+        type: 'radar',
+        data: data,
+        options: {
+          elements: {
+            line: {
+              borderWidth: 5
+            }
+          }
+        },
+      };
+        const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+
+        const data2 = {
+        labels: [
+          'liderança',
+          'Comunicação',
+          'Ingles',
+          'Trabalho em equipe',
+          'Flexibilidade',
+          'Espanhol',
+          'Criatividade'
+        ],
+        datasets: [{
+          label: 'Evolução no ultimo mês',
+          data: [70, 60, 90, 81, 38, 85, 70],
+          fill: true,
+          backgroundColor: 'rgba(173, 216, 230, 0.2)',
+          borderColor: 'rgb(173, 216, 230)',
+          pointBackgroundColor: 'rgb(173, 216, 230',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: '173, 216, 230'
+        }]
+      };
+      const config2 = {
+        type: 'radar',
+        data: data2,
+        options: {
+          elements: {
+            line: {
+              borderWidth: 5
+            }
+          }
+        },
+      };
+        const myChart2 = new Chart(
+          document.getElementById('myChart2'),
+          config2
+        );
+       
+              </script>  
+    
+
+
+
+
+
+    </section>
+  </body>
+</html>
+
+<!-- JS do MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+></script>
