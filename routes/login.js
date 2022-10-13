@@ -130,14 +130,7 @@ login_rotas.post('/loginAuth', (req, res, next) => {
 
 })
 
-login_rotas.get('/verificar', (req, res) => {
 
-    if (req.user.admin == 1) {
-        res.render('/admin/pagAdmin')
-    } else {
-        res.render("/user/missoes")
-    }
-})
 
 login_rotas.get("/logout", (req, res) => {
     req.logout(req.user, err => {

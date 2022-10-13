@@ -5,11 +5,12 @@ const Missao = require('../models/missao-model')
 const Skills = require('../models/skills-model')
 const Iniciomiss = require('../models/iniciomiss-model')
 const { eUser } = require('../helpers/eUser')
+const { userOrAdmin } = require('../helpers/userOrAdmin')
 
 
 
 
-user_rotas.get('/missoes', eUser, async(req, res) => {
+user_rotas.get('/missoes', userOrAdmin, async(req, res) => {
     Missao.findAll().then(function(miss) {
         res.render('usuario/missoes', { miss: miss })
     })
