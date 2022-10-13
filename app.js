@@ -40,7 +40,13 @@ app.use(bodyParser.json())
 
 
 // Handlebars
-app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }))
+app.engine('handlebars', handlebars.engine({
+    defaultLayout: 'main',
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true
+    }
+}))
 app.set('view engine', 'handlebars')
 app.set('views', path.join(__dirname, 'views'));
 

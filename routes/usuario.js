@@ -2,13 +2,16 @@ const express = require('express')
 const user_rotas = express.Router()
 const Usuario = require('../models/usuario-model')
 const Missao = require('../models/missao-model')
-const { json } = require('body-parser')
+
 
 
 
 user_rotas.get('/missoes', async(req, res) => {
+    Missao.findAll().then(function(miss) {
+        res.render('usuario/missoes', { miss: miss })
+    })
 
-    res.render('usuario/missoes')
+
 
 })
 

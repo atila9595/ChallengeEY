@@ -15,10 +15,30 @@
     <!--Card de cada missão-->
   
   
-      {{missoes}}
-  {{#each missoes}}
-    <h2>{{missoes.titulo}}</h2>
-    <h2>{{missoes.descricao}}</h2>
+      
+  {{#each miss}}
+    <h2></h2>
+    <h2></h2>
+    <a href="/user/descMissao">
+    <div data-aos="zoom-in" class="col-xl-12 col-md-12">
+      <div id="cardaMissao" style ="border: 0;"class="card">
+        <div class="card-content">
+          <div id="cardaMissao2" class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <img src="/images/hardskills.png" alt="">
+              </div>
+              <div class="media-body">
+                <h4 id="tituloMissao">{{titulo}}</h4>
+                <span>{{descricao}}</span>
+              </div>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
   {{/each}}
 
 
