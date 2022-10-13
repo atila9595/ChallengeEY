@@ -17,22 +17,7 @@
 
 
     <style>
-        #imgPerfil2 {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 3%;
-        }
 
-        .tituloNomePerfil {
-            font-size: 30px;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        #estrelaperfil {
-            color: #ffe600;
-            height: 50px;
-        }
     </style>
     <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
     <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
@@ -44,83 +29,58 @@
     <br>
 
     <div style="display: inline-flex;margin-bottom: 2%;">
-    
-    <div id="imagemMedal"></div>
 
-    <h4 id="amareloEy" style="padding-top: 15%;font-weight: bold;">{{user.pontos}} Pontos</h4>
+        <div id="imagemMedal"></div>
 
-    <script>
-        console.log({{user.pontos}})
-        const div = document.getElementById('imagemMedal')
-        div.innerHTML = "";
-        var img = document.createElement('img');
-        if({{user.pontos}} < 3500) {
-            img.src = "/images/medalamarelo.png";
-        } else if({{user.pontos}} >= 3500 && {{user.pontos}} < 7200) {
-            img.src = "/images/medallaranja.png";    
-        } else if({{user.pontos}} >= 7200 && {{user.pontos}} < 9800) {
-            img.src = "/images/medalroxa.png";    
-        } else if({{user.pontos}} >= 9800 && {{user.pontos}} < 15600) {
-            img.src = "/images/medalazul.png";    
-        } else {
-            img.src = "/images/medalazulescuro.png";  
-        }
-        div.appendChild(img);
-    </script>
-                                
-                                    
+        <h4 id="amareloEy" style="padding-top: 15%;font-weight: bold;">{{user.pontos}} Pontos</h4>
+
+        <script>
+            console.log({{ user.pontos }})
+            const div = document.getElementById('imagemMedal')
+            div.innerHTML = "";
+            var img = document.createElement('img');
+            if ({{ user.pontos }} < 3500) {
+                img.src = "/images/medalamarelo.png";
+            } else if ({{ user.pontos }} >= 3500 && {{ user.pontos }} < 7200) {
+                img.src = "/images/medallaranja.png";
+            } else if ({{ user.pontos }} >= 7200 && {{ user.pontos }} < 9800) {
+                img.src = "/images/medalroxa.png";
+            } else if ({{ user.pontos }} >= 9800 && {{ user.pontos }} < 15600) {
+                img.src = "/images/medalazul.png";
+            } else {
+                img.src = "/images/medalazulescuro.png";
+            }
+            div.appendChild(img);
+        </script>
+
+
 
     </div>
     <br>
-
-    <script>
-        function porcentagem() {
-            const pontos = {{user.pontos}}
-            console.log(pontos)
-            if(pontos < 3500) {
-                const porcent = (pontos * 100) / 3500
-                return Math.round(porcent)
-            } else if(pontos < 7200 && pontos >= 3500) {
-                const porcent = (pontos * 100) / 7200
-                return Math.round(porcent)
-            } else if(pontos < 9800 && pontos >= 7200) {
-                const porcent = (pontos * 100) / 9800
-                return Math.round(porcent)
-            } else if(pontos < 15600 && pontos >= 9800) {
-                const porcent = (pontos * 100) / 15600
-                return Math.round(porcent)
-            } else {
-                const porcent = 100
-                return Math.round(porcent)
-            }
-        }
-    </script>
-
     <div style="display: inline-flex;margin-bottom: 2%; width: 90%; padding-left: 15%;">
-        <!--<img style="width: 64px; height: 64px; " src="/images/medallaranja.png" alt="" />-->
         <div id="imagemMedal2"></div>
         <div class="progress" style="height: 20px; width: 70%; margin-top: auto;">
-            <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="porcentagem();" aria-valuemin="0"
-                aria-valuemax="100"><b id="porcentagemmissao">55%</b>
+            <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="porcentagem();"
+                aria-valuemin="0" aria-valuemax="100"><b id="porcentagemmissao">55%</b>
             </div>
         </div>
     </div>
 
     <script>
-        console.log({{user.pontos}})
+        console.log({{ user.pontos }})
         const div2 = document.getElementById('imagemMedal2')
         div2.innerHTML = "";
         var img = document.createElement('img');
-        if({{user.pontos}} < 3500) {
+        if ({{ user.pontos }} < 3500) {
             img.src = "/images/medalamarelo.png";
-        } else if({{user.pontos}} >= 3500 && {{user.pontos}} < 7200) {
-            img.src = "/images/medallaranja.png";    
-        } else if({{user.pontos}} >= 7200 && {{user.pontos}} < 9800) {
-            img.src = "/images/medalroxa.png";    
-        } else if({{user.pontos}} >= 9800 && {{user.pontos}} < 15600) {
-            img.src = "/images/medalazul.png";    
+        } else if ({{ user.pontos }} >= 3500 && {{ user.pontos }} < 7200) {
+            img.src = "/images/medallaranja.png";
+        } else if ({{ user.pontos }} >= 7200 && {{ user.pontos }} < 9800) {
+            img.src = "/images/medalroxa.png";
+        } else if ({{ user.pontos }} >= 9800 && {{ user.pontos }} < 15600) {
+            img.src = "/images/medalazul.png";
         } else {
-            img.src = "/images/medalazulescuro.png";  
+            img.src = "/images/medalazulescuro.png";
         }
         div2.appendChild(img);
     </script>
@@ -148,9 +108,7 @@
     </div>
 
 
-
     <script>
-
         const data = {
             labels: [
                 'React',
@@ -201,8 +159,7 @@
             ],
             datasets: [{
                 label: 'Evolução no ultimo mês',
-                //data: [70, 60, 90, 81, 38, 85, 70],
-                data: [0, 0, 0, 81, 38, 85, 0],
+                data: [70, 60, 90, 81, 38, 85, 70],
                 fill: true,
                 backgroundColor: 'rgba(173, 216, 230, 0.2)',
                 borderColor: 'rgb(173, 216, 230)',
@@ -227,12 +184,6 @@
             document.getElementById('myChart2'),
             config2
         );
-
     </script>
-
-
-
-
-
 
 </section>

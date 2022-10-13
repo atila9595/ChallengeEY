@@ -140,6 +140,23 @@ padding-right: 12%;
     background-color: #8f763f !important;
 }
 
+#imgPerfil2 {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 3%;
+}
+
+.tituloNomePerfil {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#estrelaperfil {
+    color: #ffe600;
+    height: 50px;
+}
+
 #btnFinalizar{
     margin-bottom: 40px;
     margin-top: 15px;
@@ -271,3 +288,4 @@ padding-right: 12%;
         padding-top: 2%;
         padding-bottom: 2%;
     }
+
