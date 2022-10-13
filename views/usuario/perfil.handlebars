@@ -107,7 +107,6 @@
         <canvas id="myChart2"></canvas>
     </div>
 
-
     <script>
         const data = {
             labels: [
@@ -121,7 +120,7 @@
             ],
             datasets: [{
                 label: 'Evolução no ultimo mês',
-                data: [65, 80, 90, 81, 68, 55, 70],
+                data: [{{skill.react}}, {{skill.html}}, {{skill.css}}, {{skill.javascript}}, {{skill.bootstrap}}, {{skill.angular}}, {{skill.jquery}}],
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',
@@ -149,7 +148,7 @@
 
         const data2 = {
             labels: [
-                'liderança',
+                'Liderança',
                 'Comunicação',
                 'Ingles',
                 'Trabalho em equipe',
@@ -159,7 +158,7 @@
             ],
             datasets: [{
                 label: 'Evolução no ultimo mês',
-                data: [70, 60, 90, 81, 38, 85, 70],
+                data: [{{skill.lideranca}}, {{skill.comunicacao}}, {{skill.ingles}}, {{skill.trabalho_em_equipe}}, {{skill.flexibilidade}}, {{skill.espanhol}}, {{skill.criatividade}}],
                 fill: true,
                 backgroundColor: 'rgba(173, 216, 230, 0.2)',
                 borderColor: 'rgb(173, 216, 230)',

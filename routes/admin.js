@@ -42,14 +42,14 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
         erros.push({ texto: 'descricao inválido' })
     }
     if (erros.length > 0) {
-        res.render('home/add_usuario', { erros: erros })
+        res.render('admin/cadastro-missao', { erros: erros })
     } else {
         Missao.findOne({
             where: { titulo: titulo }
         }).then((missao) => {
             if (missao) {
                 console.log(missao.titulo)
-                res.render('home/cadastro', { error_msg: 'Já existe usuario com esse email!' })
+                res.render('admin/cadastro-missao', { error_msg: 'Já existe usuario com esse email!' })
             } else {
                 Missao.create({
                     titulo: titulo,
@@ -59,15 +59,15 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
                     skill: skill
                 }).then(() => {
 
-                    res.render('home/login', { success_msg: 'Usuario adicionado com sucesso!' })
+                    res.render('admin/pagAdmin', { success_msg: 'Usuario adicionado com sucesso!' })
                 }).catch((erro) => {
                     console.log('erro: ' + erro)
-                    res.render('home/cadastro')
+                    res.render('admin/cadastro-missao')
                 })
             }
         }).catch((err) => {
             console.log('erro: ' + err)
-            res.render('home/cadastro', { error_msg: 'erro interno na hora de cadastra user!' + err })
+            res.render('admin/cadastro-missao', { error_msg: 'erro interno na hora de cadastra user!' + err })
         })
 
 

@@ -7,7 +7,7 @@
     {{>_msg}}
 
 <section class="cardMissoes">
-    <img id="imgMissao" style="padding-right: 0; " src="../static/images/imgprofal.png" alt="">
+    <img id="imgMissao" style="padding-right: 0; " src="/images/imgprofal.png" alt="">
     <script>
         AOS.init();
     </script>
@@ -24,7 +24,7 @@
     {{#each miss}}
     
     {{#if validacaomiss}}
-    <a href="missao.html">
+    <a href="/user/progMissao/{{missao.id}}">
         <div data-aos="zoom-in" class="col-xl-12 col-md-12">
             <div id="cardaMissao" style="border: 0;" class="card">
                 <div class="card-content">
@@ -59,7 +59,7 @@
     {{#if validacaomiss}}
     
     {{else}}
-    <a href="missao.html">
+    <a href="/user/progMissao/{{missao.id}}">
         <div data-aos="zoom-in" class="col-xl-12 col-md-12">
             <div id="cardaMissao" style="border: 0;" class="card">
                 <div class="card-content">
@@ -83,7 +83,7 @@
     {{/each}}
 
     <!--Missões Cadastradas-->
-    <a href="missao.html">
+    <a href="/user/descMissao/{{missao.id}}">
         <div data-aos="zoom-in" class="col-xl-12 col-md-12">
             <div id="cardaMissao" style="border: 0;" class="card">
                 <div class="card-content">

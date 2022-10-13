@@ -1,6 +1,7 @@
 const express = require('express')
 const login_rotas = express.Router()
 const Usuario = require('../models/usuario-model')
+const Skills = require('../models/skills-model')
 const passport = require("passport")
 var bcrypy = require('bcryptjs');
 
@@ -69,6 +70,8 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
                         }
 
                         passworduse = hash
+                        
+                        createSkills()
 
                         Usuario.create({
                             nome: nomeuse,
@@ -94,6 +97,27 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
 
 
     }
+}
+
+function createSkills() {
+
+    Skills.create({
+        react: 0,
+        html: 0,
+        css: 0,
+        javascript: 0,
+        bootstrap: 0,
+        angular: 0,
+        jquery: 0,
+        lideranca: 0,
+        comunicacao: 0,
+        ingles: 0,
+        trabalho_em_equipe: 0,
+        flexibilidade: 0,
+        espanhol: 0,
+        criatividade: 0
+    })
+
 }
 
 login_rotas.post('/loginAuth', (req, res, next) => {

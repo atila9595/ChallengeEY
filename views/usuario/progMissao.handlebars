@@ -45,10 +45,14 @@
             aria-valuemax="100"><b id="porcentagemmissao">25%</b></div>
     </div>
 
-    <button id="btnFinalizar" type="button" class="btn btn-outline-warning btn-rounded"
-        data-mdb-ripple-color="dark">Finalizar Missão</button>
-    <button id="btnAbandonar" type="button" class="btn btn-warning btn-rounded" data-mdb-ripple-color="dark">Abandonar
-        missão</button>
+    {{#if user.admin}}
+        
+    {{else}}
+        <button id="btnFinalizar" type="button" class="btn btn-outline-warning btn-rounded"
+            data-mdb-ripple-color="dark">Finalizar Missão</button>
+        <button id="btnAbandonar" type="button" class="btn btn-warning btn-rounded" data-mdb-ripple-color="dark">Abandonar
+            missão</button>
+    {{/if}}
 
 
 
