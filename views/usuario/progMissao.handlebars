@@ -24,12 +24,11 @@
                 <div id="cardaMissao2" class="card-body cleartfix">
                     <div class="media align-items-stretch">
                         <div class="align-self-center">
-                            <img src="/images/hardskills.png" alt="">
+                            <img src="/images/{{miss.skill}}.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h4 id="tituloMissao">Desenvolvimento Web Completo 2022 - 20 cursos + 20 projetos</h4>
-                            <span>Domine Web - 20 Cursos - HTML5, CSS3, SASS, Bootstrap, JS, ES6, PHP 7, OO, MySQL,
-                                JQuery, MVC, APIs, IONIC e muito mais</span>
+                            <h4 id="tituloMissao">{{miss.titulo}}</h4>
+                            <span>{{miss.descricao}}</span>
                         </div>
                     </div>
                 </div>
@@ -41,7 +40,7 @@
 
     <div class="progress" style="height: 20px;">
         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-            aria-valuemax="100"><b id="porcentagemmissao">25%</b></div>
+            aria-valuemax="100"><b id="porcentagemmissao">0%</b></div>
     </div>
 
     <button id="btnFinalizar" type="button" class="btn btn-outline-warning btn-rounded"

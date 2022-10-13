@@ -23,14 +23,15 @@
                 <div id="cardaMissao2" class="card-body cleartfix">
                     <div class="media align-items-stretch">
                         <div class="align-self-center">
-                            <img src="/images/hardskills.png" alt="">
+                            <img src="/images/{{miss.skill}}.png" alt="">
                         </div>
                         <div class="media-body">
-                            <h4 id="tituloMissao">Desenvolvimento Web Completo 2022 - 20 cursos + 20 projetos</h4>
-                            <span>Domine Web - 20 Cursos - HTML5, CSS3, SASS, Bootstrap, JS, ES6, PHP 7, OO, MySQL,
-                                JQuery, MVC, APIs, IONIC e muito mais</span>
+                            <h4 id="tituloMissao">{{miss.titulo}}</span>
                         </div>
                     </div>
+                        <div class="media-body">
+                            <p id="descMissaotxt">{{miss.descricao}}</p>
+                        </div> 
                 </div>
             </div>
         </div>
@@ -38,15 +39,10 @@
     </div>
     </a>
 
-    <h4 id="amareloEy">+150 Pontos</h4>
+    <h4 id="amareloEy">+{{miss.pontuacao}} pontos</h4>
 
     <button data-mdb-toggle="modal" data-mdb-target="#exampleModal" id="btnIniciar" type="button"
         class="btn btn-warning btn-rounded" data-mdb-ripple-color="dark">Iniciar missão</button>
-
-    <p id="descMissaotxt">Criar aplicações WEB: Do front ao back-end e banco de dados com HTML5, CSS3, BootStrap 4, JS,
-        ES6, ES7, PHP 7, OO, MySQL, JQuery, MVC, API, IONIC e Wordpress.</p>
-    <p id="descMissaotxt">Como tornar suas habilidades em desenvolvimento web uma atividade remunerada, trabalhando de
-        onde quiser.</p>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -64,7 +60,7 @@
                 <div class="modal-footer">
                     <button type="button" style="color: #fff;" class="btn btn-danger"
                         data-mdb-dismiss="modal">Cancelar</button>
-                    <a href="/user/progMissao">
+                    <a href="/user/progMissao/{{id}}">
                         <button type="button" class="btn btn-success">Aceitar Missão</button>
                     </a>
                 </div>
