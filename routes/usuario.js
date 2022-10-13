@@ -2,7 +2,6 @@ const express = require('express')
 const user_rotas = express.Router()
 const Usuario = require('../models/usuario-model')
 const Missao = require('../models/missao-model')
-const Iniciomiss = require('../models/iniciomiss-model')
 
 
 
@@ -60,11 +59,10 @@ user_rotas.get('/descMissao/:id', (req, res) => {
 })
 
 user_rotas.get('/progMissao/:id', (req, res) => {
-<<<<<<< Updated upstream
     var id = req.params.id
     console.log(id)
     Missao.findByPk(id).then((miss) => {
-        res.render('usuario/progMissao', {miss: miss})
+        res.render('usuario/progMissao', { miss: miss })
     }).catch((erro) => {
         res.send('erro: ' + erro)
     })
@@ -74,39 +72,10 @@ user_rotas.get('/perfil/:id', (req, res) => {
     var id = req.params.id
     console.log(id)
     Usuario.findByPk(id).then((usuario) => {
-        res.render('usuario/perfil', {usuario: usuario})
-=======
-    var idmiss = req.params.id
-    console.log(idmiss)
-
-    Iniciomiss.create({
-        usuarioId: req.user.id,
-        missaoId: idmiss,
-        statusmiss: 'pendente',
-        validacaomiss: false
-    }).then(() => {
-
-        getIdMiss(idmiss, res)
-
-
->>>>>>> Stashed changes
+        res.render('usuario/perfil', { usuario: usuario })
     }).catch((erro) => {
-        console.log('erro: ' + erro)
-        res.render('home/cadastro')
+        res.send('erro: ' + erro)
     })
-
-    function getIdMiss(id, res) {
-        Missao.findByPk(id).then((miss) => {
-            res.render('usuario/progMissao', { miss: miss })
-        }).catch((erro) => {
-            res.send('erro: ' + erro)
-        })
-    }
-
-
-
-
-
 })
 
 module.exports = user_rotas
