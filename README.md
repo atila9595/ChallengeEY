@@ -122,7 +122,7 @@ Como clonar o repositório:
 ~~~
 ## Vídeo demonstrativo
 
-[![youtube.com](./public/images/EY.jpg)](https://youtu.be/PqJC4B5rqRE)
+[![youtube.com](./public/images/EY.jpg)](https://youtu.be/apDFk2EZvbU)
 
 ## Referências
 
