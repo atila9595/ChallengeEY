@@ -1,0 +1,170 @@
+{{>_navbar}}
+{{#if error}}
+<div class="alert alert-danger">{{error}}</div>
+{{else}}
+
+{{/if}}
+{{>_msg}}
+
+<section class="cardMissoes">
+
+    <br>
+    <img id="imgPerfil2" class="rounded-circle" src="{{user.imguser}}" alt="">
+
+    <h4 class="tituloNomePerfil">{{user.nome}}</h4>
+    <br>
+
+
+
+    <style>
+        #imgPerfil2 {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 3%;
+        }
+
+        .tituloNomePerfil {
+            font-size: 30px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        #estrelaperfil {
+            color: #ffe600;
+            height: 50px;
+        }
+    </style>
+    <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
+    <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
+    <i id="estrelaperfil" class="fas fa-star fa-2x"></i>
+    <i id="" class="fas fa-star fa-2x"></i>
+    <i id="" class="fas fa-star fa-2x"></i>
+
+    <br>
+    <br>
+
+    <div style="display: inline-flex;margin-bottom: 2%;">
+        <img src="/images/medalamarelo.png" alt="" />
+        <h4 id="amareloEy" style="padding-top: 15%;font-weight: bold;">{{user.pontos}} Pontos</h4>
+    </div>
+    <br>
+
+    <div style="display: inline-flex;margin-bottom: 2%; width: 90%; padding-left: 15%;">
+        <img style="width: 64px; height: 64px; " src="/images/medallaranja.png" alt="" />
+        <div class="progress" style="height: 20px; width: 70%; margin-top: auto;">
+            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0"
+                aria-valuemax="100"><b id="porcentagemmissao">45%</b>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <img src="/images/hardskills.png" alt="">
+    <h4 class="tituloNome">Hard Skills</h4>
+
+    <div style="width:50%; height:50%; margin: auto; background-color: #fff; border-radius: 10px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <br>
+    <br>
+
+    <img src="/images/soft-skills.png" alt="">
+    <h4 class="tituloNome">Soft Skills</h4>
+
+
+
+    <div style="width:50%; height:50%; margin: auto; border-radius: 10px; background: #fff;">
+        <canvas id="myChart2"></canvas>
+    </div>
+
+
+
+    <script>
+
+        const data = {
+            labels: [
+                'React',
+                'HTML',
+                'CSS',
+                'Javacript',
+                'Bootstrap',
+                'Angular',
+                'Jquery'
+            ],
+            datasets: [{
+                label: 'Evolução no ultimo mês',
+                data: [65, 80, 90, 81, 68, 55, 70],
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                pointBackgroundColor: 'rgb(255, 99, 132)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(255, 99, 132)'
+            }]
+        };
+        const config = {
+            type: 'radar',
+            data: data,
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 5
+                    }
+                }
+            },
+        };
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+        const data2 = {
+            labels: [
+                'liderança',
+                'Comunicação',
+                'Ingles',
+                'Trabalho em equipe',
+                'Flexibilidade',
+                'Espanhol',
+                'Criatividade'
+            ],
+            datasets: [{
+                label: 'Evolução no ultimo mês',
+                data: [70, 60, 90, 81, 38, 85, 70],
+                fill: true,
+                backgroundColor: 'rgba(173, 216, 230, 0.2)',
+                borderColor: 'rgb(173, 216, 230)',
+                pointBackgroundColor: 'rgb(173, 216, 230',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '173, 216, 230'
+            }]
+        };
+        const config2 = {
+            type: 'radar',
+            data: data2,
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 5
+                    }
+                }
+            },
+        };
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+
+    </script>
+
+
+
+
+
+
+</section>

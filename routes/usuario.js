@@ -62,7 +62,17 @@ user_rotas.get('/progMissao/:id', (req, res) => {
     var id = req.params.id
     console.log(id)
     Missao.findByPk(id).then((miss) => {
-        res.render('usuario/descMissao', {miss: miss})
+        res.render('usuario/progMissao', {miss: miss})
+    }).catch((erro) => {
+        res.send('erro: ' + erro)
+    })
+})
+
+user_rotas.get('/perfil/:id', (req, res) => {
+    var id = req.params.id
+    console.log(id)
+    Usuario.findByPk(id).then((usuario) => {
+        res.render('usuario/perfil', {usuario: usuario})
     }).catch((erro) => {
         res.send('erro: ' + erro)
     })
