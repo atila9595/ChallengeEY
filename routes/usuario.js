@@ -48,4 +48,24 @@ user_rotas.get('/regras', (req, res) => {
 })
 
 
+user_rotas.get('/descMissao/:id', (req, res) => {
+    var id = req.params.id
+    //console.log(id)
+    Missao.findByPk(id).then((miss) => {
+        res.render('usuario/descMissao', {miss: miss})
+    }).catch((erro) => {
+        res.send('erro: ' + erro)
+    })
+})
+
+user_rotas.get('/progMissao/:id', (req, res) => {
+    var id = req.params.id
+    console.log(id)
+    Missao.findByPk(id).then((miss) => {
+        res.render('usuario/descMissao', {miss: miss})
+    }).catch((erro) => {
+        res.send('erro: ' + erro)
+    })
+})
+
 module.exports = user_rotas
