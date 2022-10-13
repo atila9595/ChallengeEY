@@ -12,27 +12,28 @@
         AOS.init();
     </script>
     <!--Card de cada missão-->
-    <a href="missao.html">
-        <div data-aos="zoom-in" class="col-xl-12 col-md-12">
-            <div id="cardaMissao" style="border: 0;" class="card">
-                <div class="card-content">
-                    <div id="cardaMissao2" class="card-body cleartfix">
-                        <div class="media align-items-stretch">
-                            <div class="align-self-center">
-                                <img src="/images/hardskills.png" alt="">
-                            </div>
-                            <div class="media-body">
-                                <h4 id="tituloMissao">Desenvolvimento Web Completo 2022 - 20 cursos + 20 projetos</h4>
-                                <span>Domine Web - 20 Cursos - HTML5, CSS3, SASS, Bootstrap, JS, ES6, PHP 7, OO, MySQL,
-                                    JQuery, MVC, APIs, IONIC e muito mais</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    {{#each miss}}
+    <a href="/admin/editmissao/{{id}}">
+    <div data-aos="zoom-in" class="col-xl-12 col-md-12">
+      <div id="cardaMissao" style ="border: 0;"class="card">
+        <div class="card-content">
+          <div id="cardaMissao2" class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <img src="/images/{{skill}}.png" alt="">
+              </div>
+              <div class="media-body">
+                <h4 id="tituloMissao">{{titulo}}</h4>
+                <span>{{descricao}}</span>
+              </div>      
             </div>
+          </div>
         </div>
-        </div>
-    </a>
+      </div>
+    </div>
+  </div>
+</a>
+  {{/each}}
 
     <a href="missao.html">
         <div data-aos="zoom-in" class="col-xl-12 col-md-12">

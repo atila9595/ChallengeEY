@@ -1,0 +1,58 @@
+{{>_navbar}}
+    {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+    {{else}}
+
+    {{/if}}
+    {{>_msg}}
+
+<section class="cardMissoes">
+    <img id="imgMissao" style="padding-right: 0;" src="/images/imgcadastrar.png" alt="">
+    <script>
+      AOS.init();
+    </script>
+    <!--Card de cada missão-->
+    
+
+    <div class="CadastroProduto" style="padding: 20px; margin-bottom: 5%;">
+    
+        <!---Nome do produto-->
+        <h5 style="margin-top: 2%; color: #ffe600;">Titulo da missão:</h5>
+        <form action="/admin/cadadd" method="post">
+        <input style="background-color: #2e2e38; color:  #fff; border: 1px solid #ffe600;"  name="titulo" style="margin-top: 2%;" class="form-control" type="text" placeholder="Desenvolvimento com Flutter" value="{{miss.titulo}}">
+        <h5 style="margin-top: 2%;color: #ffe600;">Descrição da missão:</h5>
+        <!---Descrição do produto-->
+        <textarea name="descrição"  placeholder="Descrição referente ao seu produto" style="resize: none;color:  #fff;height: 150px; margin-top: 2%;background-color: #2e2e38; border: 1px solid #ffe600;" class="form-control" id="exampleFormControlTextarea1" rows="3">{{miss.descricao}}</textarea>
+        <!---Categoria-->
+        <h5 style="margin-top: 2%; color: #ffe600;">Selecione a categoria da missão</h5>
+            
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="soft-skills" name="flexRadioDefault" id="flexRadioDefault1">
+            <label style="color: #fff;" class="form-check-label" for="flexRadioDefault1">
+              Soft Skill
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="hardskills" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label style="color: #fff;" class="form-check-label" for="flexRadioDefault2">
+              Hard Skill
+            </label>
+          </div>
+    
+    <h5 style="margin-top: 2%; color: #ffe600;">Pontuação:</h5>
+    <input name="ponto" style="margin-top: 2%; background-color: #2e2e38;color:  #fff; border: 1px solid #ffe600;" class="form-control" type="text" placeholder="150 pontos" value="{{miss.pontuacao}}">
+
+           
+    
+       
+
+        </div>
+
+
+        <div style="text-align: center; margin-bottom: 5%; margin-top: 2%;">
+           <button style="margin-bottom: 5%;" class="btnPublicar" onclick="location.href='/templates/pagAdm.html'">Publicar</button>
+        </div>
+    </form>
+      </div>
+
+  </section>

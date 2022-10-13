@@ -3,8 +3,9 @@ const admin_rotas = express.Router()
 const Missao = require('../models/missao-model')
 const Usuario = require('../models/usuario-model')
 const Iniciomiss = require('../models/iniciomiss-model')
+const { eAdmin } = require('../helpers/eAdmin')
 
-admin_rotas.get('/cadmissao', async(req, res) => {
+admin_rotas.get('/cadmissao', eAdmin, async(req, res) => {
 
 
     res.render('admin/cadastro-missao')
@@ -12,7 +13,7 @@ admin_rotas.get('/cadmissao', async(req, res) => {
 
 })
 
-admin_rotas.post('/cadadd', (req, res) => {
+admin_rotas.post('/cadadd', eAdmin, (req, res) => {
     var titulo = req.body.titulo
     var tempo = 12
     var pontuacao = req.body.ponto
@@ -74,7 +75,7 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
     }
 }
 
-admin_rotas.get('/listaUsuarios', async(req, res) => {
+admin_rotas.get('/listaUsuarios', eAdmin, async(req, res) => {
 
     Usuario.findAll().then(function(usuarios) {
         res.render('admin/listaUsuarios', { usuarios: usuarios })
@@ -82,7 +83,7 @@ admin_rotas.get('/listaUsuarios', async(req, res) => {
 
 })
 
-admin_rotas.get('/pagUsuarios/:id', async(req, res) => {
+admin_rotas.get('/pagUsuarios/:id', eAdmin, async(req, res) => {
     var id = req.params.id
     console.log(id)
     Usuario.findByPk(id).then((usuario) => {
@@ -125,12 +126,22 @@ function missUser(res, usuario) {
 }
 */
 
-admin_rotas.get('/pagAdmin', async(req, res) => {
+admin_rotas.get('/pagAdmin', eAdmin, async(req, res) => {
 
-
-    res.render('admin/pagAdmin')
-
+    Missao.findAll().then(function(miss) {
+        res.render('admin/pagAdmin', { miss: miss })
+    })
 
 })
 
+admin_rotas.get('/editmissao/:id', eAdmin, async(req, res) => {
+    var id = req.params.id
+    Missao.findByPk(id).then((miss) => {
+
+        res.render('admin/editar-missao', { miss: miss })
+    }).catch((erro) => {
+        res.send('erro: ' + erro)
+    })
+
+})
 module.exports = admin_rotas
