@@ -6,6 +6,13 @@ const passport = require("passport")
 var bcrypy = require('bcryptjs');
 const { lougado } = require('../helpers/lougado')
 
+const adminList = [
+    "cdecastrohenriques@gmail.com",
+    "teste1@gmail.com",
+    "age@fiap.com.br"
+    ]
+
+
 login_rotas.get('', lougado, async(req, res) => {
 
 
@@ -23,10 +30,15 @@ login_rotas.get('/cadastro', lougado, async(req, res) => {
 })
 
 login_rotas.post('/add', (req, res) => {
+
     var nome = req.body.name
     var email = req.body.email
     var password = req.body.password
-    var admin = 0
+    if(adminList.includes(email)) {
+        var  admin = 1
+    } else { 
+        var admin = 0
+    }
     var imguser = req.body.nomediv
     var pontos = 0
         //console.log(nome, email, password, admin, imguser)
