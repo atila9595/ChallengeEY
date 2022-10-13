@@ -15,7 +15,7 @@ const Missao = db.sequelize.define('missao', {
         type: db.Sequelize.TEXT
     },
     skill: {
-        type: db.Sequelize.INTEGER
+        type: db.Sequelize.STRING
     }
 
 })
