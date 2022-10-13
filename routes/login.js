@@ -70,7 +70,7 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
                         }
 
                         passworduse = hash
-                        
+
                         createSkills()
 
                         Usuario.create({
@@ -128,6 +128,15 @@ login_rotas.post('/loginAuth', (req, res, next) => {
         failureFlash: true
     })(req, res, next)
 
+})
+
+login_rotas.get('/verificar', (req, res) => {
+
+    if (req.user.admin == 1) {
+        res.render('/admin/pagAdmin')
+    } else {
+        res.render("/user/missoes")
+    }
 })
 
 login_rotas.get("/logout", (req, res) => {

@@ -144,4 +144,8 @@ admin_rotas.get('/editmissao/:id', eAdmin, async(req, res) => {
     })
 
 })
+
+admin_rotas.get('/regras', eAdmin, (req, res) => {
+    res.render('usuario/regras')
+})
 module.exports = admin_rotas
