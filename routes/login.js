@@ -4,8 +4,9 @@ const Usuario = require('../models/usuario-model')
 const Skills = require('../models/skills-model')
 const passport = require("passport")
 var bcrypy = require('bcryptjs');
+const { lougado } = require('../helpers/lougado')
 
-login_rotas.get('', async(req, res) => {
+login_rotas.get('', lougado, async(req, res) => {
 
 
     res.render('home/login')
@@ -13,7 +14,7 @@ login_rotas.get('', async(req, res) => {
 
 })
 
-login_rotas.get('/cadastro', async(req, res) => {
+login_rotas.get('/cadastro', lougado, async(req, res) => {
 
 
     res.render('home/cadastro')
