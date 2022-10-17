@@ -46,9 +46,7 @@ button img {
 .corEY{
  background-color: #2e2e38;
 }
-.navbar{
-background-color: #ffe600;
-}
+
 .nav-item a{
     color: #fff;
 }
@@ -57,6 +55,9 @@ background-color: #ffe600;
 }
 #amareloEy{
     color: #ffe600;
+}
+#amareloEy2{
+    background-color:  #ffe600;
 }
 
 #laranjaEy{
@@ -134,10 +135,32 @@ padding-right: 12%;
     color: #fff;
 }
 
-
-#tituloMissao{
-    color: #ffe600;
+#cardaMissao3{
+    border-right:5px solid #eb9811;
+    background-color: #2e2e38;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+#cardaMissao4{
+    border-right:5px solid #70499c;
+    background-color: #2e2e38;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+#cardaMissao5{
+    border-right:5px solid #79c59c;
+    background-color: #2e2e38;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#cardaMissao6{
+    border-right:5px solid #0c737d;
+    background-color: #2e2e38;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 #tituloVagas{
     color: #add8e6;
 }
