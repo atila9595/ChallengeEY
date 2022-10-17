@@ -113,6 +113,20 @@ padding-right: 12%;
     border: 0;
     margin-top: 20px;
 }
+#cardaVagas{
+    border-right:5px solid #add8e6;
+    border: 0;
+    margin-top: 20px;
+}
+
+#cardaVagas2{
+    background-color: #33333d;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-right:5px solid #add8e6;
+    color: #fff;
+}
+
+
 #cardaMissao2{
     background-color: #2e2e38;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -123,6 +137,9 @@ padding-right: 12%;
 
 #tituloMissao{
     color: #ffe600;
+}
+#tituloVagas{
+    color: #add8e6;
 }
 
 #btnIniciar{
@@ -187,6 +204,11 @@ padding-right: 12%;
     width: 200px;
     height: 200px;
 }
+#output2{
+    width: 200px;
+    height: 200px;
+}
+
 
     .selecionarImagem{
      display: none;
@@ -288,4 +310,52 @@ padding-right: 12%;
         padding-top: 2%;
         padding-bottom: 2%;
     }
+    .tituloCargo{
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .sugestao{
+        width: 150px;
+        height: 80px;
+        border: #78449c 1px solid;
+    }
+
+    #btnCRM{
+        display: flex;
+        align-items: center;
+        padding: 3px 5px 5px;
+        justify-content: space-evenly;
+        width: 160px;
+        border-radius: 8px;
+        transition: 0.3s;
+        font-weight: 400;
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
+        height: 55px;
+        background-image: linear-gradient(to right top, #f6eb90, #f8ea78, #fae95e, #fde83f, #ffe600);
+      }
+
+      #txtDu2{
+        color: #fff;
+        text-align: center; 
+        margin: auto;
+        font-size: 25px;
+        padding: 20px;
+      }
+
+      #txtDu{
+        color: #fff;
+        text-align: center; 
+        margin: auto;
+        font-size: 20px;
+        padding: 20px;
+      }
+      .imgEmprego{
+        width: 64px;
+      }
+
+    
 
