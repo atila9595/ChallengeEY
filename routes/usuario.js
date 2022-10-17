@@ -100,4 +100,9 @@ function getIdMiss(id, res) {
     })
 }
 
+
+user_rotas.get('/contato', eUser, (req, res) => {
+    res.render('usuario/contatos')
+})
+
 module.exports = user_rotas
