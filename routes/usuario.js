@@ -105,4 +105,16 @@ user_rotas.get('/contato', eUser, (req, res) => {
     res.render('usuario/contatos')
 })
 
+user_rotas.get('/listaVagas', eUser, (req, res) => {
+    res.render('usuario/listaVagas')
+})
+
+user_rotas.get('/descVaga', eUser, (req, res) => {
+    res.render('usuario/descVagas')
+})
+
+user_rotas.get('/vagaEnviada', eUser, (req, res) => {
+    res.render('usuario/vagaEnviada')
+})
+
 module.exports = user_rotas
