@@ -45,8 +45,10 @@ user_rotas.get('/descMissao', eUser, (req, res) => {
 
 user_rotas.get('/progMissaoAtual/:id', eUser, (req, res) => {
     iduser = req.user.id
-    Iniciomiss.update({ statusmiss: 'concluido', validacaomiss: true }, { where: { id: req.params.id, usuarioId: iduser } }).then(() => {
-        res.redirect('usuario/missoes')
+    idmiss = req.params.id
+    console.log(idmiss, iduser)
+    Iniciomiss.update({ statusmiss: 'concluido', validacaomiss: true }, { where: { missaoId: idmiss, usuarioId: iduser } }).then(() => {
+        res.render('usuario/missoes')
     })
 
 })
