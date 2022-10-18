@@ -13,53 +13,40 @@
         AOS.init();
     </script>
 
+    <form action="/admin/cadvagas" method="post">
+        <div class="CadastroProduto" style="padding: 20px; margin-bottom: 5%;">
 
-    <div class="CadastroProduto" style="padding: 20px; margin-bottom: 5%;">
+            <!---Titulo da vaga-->
+            <h5 style="margin-top: 2%; color: #ffe600;">Titulo da vaga:</h5>
+            <input style="background-color: #2e2e38; color:  #fff; border: 1px solid #ffe600;" name="titulo"
+                style="margin-top: 2%;" class="form-control" type="text" placeholder="Desenvolvedor">
+            <h5 style="margin-top: 2%;color: #ffe600;">Descrição da vaga:</h5>
+            <!---Descrição da vaga-->
+            <textarea name="descrição" placeholder="Descrição referente a vaga"
+                style="resize: none;color:  #fff;height: 150px; margin-top: 2%;background-color: #2e2e38; border: 1px solid #ffe600;"
+                class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
-        <!---Titulo da vaga-->
-        <h5 style="margin-top: 2%; color: #ffe600;">Titulo da vaga:</h5>
-        <input style="background-color: #2e2e38; color:  #fff; border: 1px solid #ffe600;" name="nome-produto"
-            style="margin-top: 2%;" class="form-control" type="text" placeholder="Desenvolvimento com Flutter">
-        <h5 style="margin-top: 2%;color: #ffe600;">Descrição da vaga:</h5>
-        <!---Descrição da vaga-->
-        <textarea name="comentario" placeholder="Descrição referente ao seu produto"
-            style="resize: none;color:  #fff;height: 150px; margin-top: 2%;background-color: #2e2e38; border: 1px solid #ffe600;"
-            class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
-        <!---Icone da vaga-->
-        <h5 style="margin-top: 2%; color: #ffe600;">Selecione o icone da vaga :</h5>
-        <div class="row" style="margin-top: 2%; text-align: center;">
-            <div style="width: 100%;">
-                <div style="text-align: center;">
-                    <img id="output2" />
-                </div>
-                <label style="float: right; margin-right:12%;" class="btnImg" for="file" style="border:1px solid #000;">
-                    <input name="imagem" class="selecionarImagem" id="file" type="file" accept="image/*"
-                        onchange="loadFile2(event)">
-                    +
-                </label>
-            </div>
+            <h5 style="margin-top: 2%; color: #ffe600;">Selecione a categoria da Vaga:</h5>
+            <select name="categoria" style="margin-top: 2%;" style="width: 60%;" class="form-control"
+                id="exampleFormControlSelect1">
+                <option value="1">Front-End</option>
+                <option value="2">Back-End</option>
+                <option value="3">Banco de Dados</option>
+                <option value="4">Devops</option>
+                <option value="5">Mobile</option>
+                <option value="6">Gestão</option>
+                <option value="7">Comunicação</option>
+                <option value="8">Desenvolvimento Pessoal</option>
+            </select>
 
         </div>
 
-        <!--Script para pré visualizar a imagem enviada, colocar no Main JS depois--->
-        <script>
-            var loadFile2 = function (event) {
-                var output2 = document.getElementById('output2');
-                output2.src = URL.createObjectURL(event.target.files[0]);
-                output2.onload = function () {
-                    URL.revokeObjectURL(output2.src)
-                }
-            };
-        </script>
 
-    </div>
-
-
-    <div style="text-align: center; margin-bottom: 5%; margin-top: 2%;">
-        <button style="margin-bottom: 5%;" class="btnPublicar"
-            onclick="location.href='/templates/homevaga.html'">Publicar</button>
-    </div>
+        <div style="text-align: center; margin-bottom: 5%; margin-top: 2%;">
+            <button style="margin-bottom: 5%;" class="btnPublicar"
+                onclick="location.href='/templates/homevaga.html'">Publicar</button>
+        </div>
+    </form>
 
     </div>
 

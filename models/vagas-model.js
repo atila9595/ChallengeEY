@@ -17,6 +17,6 @@ const Vaga = db.sequelize.define('vaga', {
 
 Vaga.belongsTo(Tag)
 
-Vaga.sync({ force: true })
+//Vaga.sync({ force: true })
 
 module.exports = Vaga

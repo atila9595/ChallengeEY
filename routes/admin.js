@@ -1,6 +1,7 @@
 const express = require('express')
 const admin_rotas = express.Router()
 const Missao = require('../models/missao-model')
+const Vaga = require('../models/vagas-model')
 const Usuario = require('../models/usuario-model')
 const Iniciomiss = require('../models/iniciomiss-model')
 const { eAdmin } = require('../helpers/eAdmin')
@@ -44,10 +45,10 @@ admin_rotas.post('/cadadd', eAdmin, (req, res) => {
     var descricao = req.body.descrição
     var skill = req.body.flexRadioDefault
     console.log(titulo, url, categoria, pontuacao, descricao, skill)
-    saveMiss(res, titulo, url, categoria, pontuacao, descricao, skill)
+    saveMiss(res, req, titulo, url, categoria, pontuacao, descricao, skill)
 })
 
-function saveMiss(res, titulo, url, categoria, pontuacao, descricao, skill) {
+function saveMiss(res, req, titulo, url, categoria, pontuacao, descricao, skill) {
     var erros = []
 
     if (!titulo || typeof titulo == undefined || titulo == null) {
@@ -85,7 +86,9 @@ function saveMiss(res, titulo, url, categoria, pontuacao, descricao, skill) {
                     tagId: categoria
                 }).then(() => {
 
-                    res.render('admin/pagAdmin', { success_msg: 'Missão criada com sucesso!' })
+                    //res.render('admin/pagAdmin', { success_msg: 'Missão criada com sucesso!' })
+                    req.flash({ success_msg: 'Missão criada com sucesso!' })
+                    res.redirect("/admin/pagAdmin");
                 }).catch((erro) => {
                     console.log('erro: ' + erro)
                     res.render('admin/cadastro-missao')
@@ -157,7 +160,9 @@ admin_rotas.get('/regras', eAdmin, (req, res) => {
 })
 
 admin_rotas.get('/vagas', eAdmin, (req, res) => {
-    res.render('admin/vagasHome')
+    Vaga.findAll().then(function(vaga) {
+        res.render('admin/vagasHome', { vaga: vaga })
+    })
 })
 
 admin_rotas.get('/cadastroVagas', eAdmin, (req, res) => {
@@ -166,6 +171,73 @@ admin_rotas.get('/cadastroVagas', eAdmin, (req, res) => {
 
 admin_rotas.get('/descVagas', eAdmin, (req, res) => {
     res.render('usuario/descVagas')
+})
+
+
+
+admin_rotas.post('/cadvagas', eAdmin, (req, res) => {
+    var titulo = req.body.titulo
+    var descricao = req.body.descrição
+    var categoria = req.body.categoria
+    var horas = 6
+    console.log(titulo, descricao, categoria, horas)
+    saveMissVagas(res, req, titulo, descricao, categoria, horas)
+})
+
+function saveMissVagas(res, req, titulo, descricao, categoria, horas) {
+    var erros = []
+
+    if (!titulo || typeof titulo == undefined || titulo == null) {
+        erros.push({ texto: 'titulo inválido' })
+    }
+    if (titulo.length < 2) {
+        erros.push({ texto: 'titulo muito pequenos' })
+    }
+    if (!descricao || typeof descricao == undefined || descricao == null) {
+        erros.push({ texto: 'descricao inválido' })
+    }
+    if (erros.length > 0) {
+        res.render('admin/cadastro-vagas', { erros: erros })
+    } else {
+        Vaga.findOne({
+            where: { titulo: titulo }
+        }).then((vaga) => {
+            if (vaga) {
+                console.log(vaga.titulo)
+                res.render('admin/cadastro-vagas', { error_msg: 'Já existe um nome com essa vaga!' })
+            } else {
+                Vaga.create({
+                    titulo: titulo,
+                    descricao: descricao,
+                    horas: horas,
+                    tagId: categoria
+                }).then(() => {
+
+                    //res.render('admin/pagAdmin', { success_msg: 'Vaga criada com sucesso!' })
+                    req.flash({ success_msg: 'Vaga criada com sucesso!' })
+                    res.redirect("/admin/vagas");
+                }).catch((erro) => {
+                    console.log('erro: ' + erro)
+                    res.render('admin/cadastro-vagas')
+                })
+            }
+        }).catch((err) => {
+            console.log('erro: ' + err)
+            res.render('admin/cadastro-vagas', { error_msg: 'erro interno na hora de cadastra user!' + err })
+        })
+
+
+    }
+}
+
+admin_rotas.get('/descVagas/:id', eAdmin, (req, res) => {
+    var id = req.params.id
+        //console.log(id)
+    Vaga.findByPk(id).then((vaga) => {
+        res.render('usuario/descVagas', { vaga: vaga })
+    }).catch((erro) => {
+        res.send('erro: ' + erro)
+    })
 })
 
 module.exports = admin_rotas
