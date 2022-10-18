@@ -1,11 +1,8 @@
 const db = require('./db')
-
+const Tag = require('../models/tags-model')
 
 const Missao = db.sequelize.define('missao', {
     titulo: {
-        type: db.Sequelize.STRING
-    },
-    tempo: {
         type: db.Sequelize.STRING
     },
     pontuacao: {
@@ -16,9 +13,14 @@ const Missao = db.sequelize.define('missao', {
     },
     skill: {
         type: db.Sequelize.STRING
+    },
+    url: {
+        type: db.Sequelize.STRING
     }
 
 })
+
+Missao.belongsTo(Tag)
 
 //Missao.sync({ force: true })
 

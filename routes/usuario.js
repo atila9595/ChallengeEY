@@ -4,6 +4,7 @@ const Usuario = require('../models/usuario-model')
 const Missao = require('../models/missao-model')
 const Skills = require('../models/skills-model')
 const Iniciomiss = require('../models/iniciomiss-model')
+const TagsUser = require('../models/tagsUser-model')
 const { eUser } = require('../helpers/eUser')
 const { userOrAdmin } = require('../helpers/userOrAdmin')
 
@@ -48,10 +49,60 @@ user_rotas.get('/progMissaoAtual/:id', eUser, (req, res) => {
     idmiss = req.params.id
     console.log(idmiss, iduser)
     Iniciomiss.update({ statusmiss: 'concluido', validacaomiss: true }, { where: { missaoId: idmiss, usuarioId: iduser } }).then(() => {
-        res.render('usuario/missoes')
+        createSkills(idmiss, req, res)
+    }).then(() => {
+        res.redirect('/user/missoes')
+    }).catch((erro) => {
+        res.render('erro: ' + erro)
     })
 
 })
+
+async function createSkills(idmiss, req) {
+
+    console.log('id da missão' + idmiss)
+    await Skills.create({
+        usuarioId: req.user.id,
+        missaoId: idmiss
+    })
+
+    pesquisaMiss(idmiss, req)
+
+}
+
+async function pesquisaMiss(idmiss, req) {
+    await Missao.findByPk(idmiss).then((miss) => {
+        tagId = miss.tagId
+        pontuacao = miss.pontuacao
+        inserirPontoTag(tagId, pontuacao, req)
+
+    }).catch((erro) => {
+        console.log('erro: ' + erro)
+    })
+}
+
+async function inserirPontoTag(tagId, pontuacao, req) {
+    await TagsUser.create({
+        usuarioId: req.user.id,
+        tagId: tagId
+    })
+
+    var pontos = req.user.pontos + pontuacao
+    var id = req.user.id
+    await Usuario.update({
+        pontos: pontos
+    }, {
+        where: {
+            id: id
+        }
+    })
+
+
+
+
+
+
+}
 
 user_rotas.get('/regras', eUser, (req, res) => {
     res.render('usuario/regras')

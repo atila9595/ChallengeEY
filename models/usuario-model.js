@@ -1,7 +1,7 @@
 const db = require('./db')
 
 
-const Usuaro = db.sequelize.define('usuario', {
+const Usuario = db.sequelize.define('usuario', {
     nome: {
         type: db.Sequelize.STRING
     },
@@ -23,6 +23,6 @@ const Usuaro = db.sequelize.define('usuario', {
 
 })
 
-//Usuaro.sync({ force: true })
+//Usuario.sync({ force: true })
 
-module.exports = Usuaro
+module.exports = Usuario

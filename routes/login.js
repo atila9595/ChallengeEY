@@ -84,7 +84,7 @@ function saveUser(res, nomeuse, emailuse, passworduse, adminuse, imguser, pontos
 
                         passworduse = hash
 
-                        createSkills()
+                        //createSkills()
 
                         Usuario.create({
                             nome: nomeuse,

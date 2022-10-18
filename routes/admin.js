@@ -38,15 +38,16 @@ admin_rotas.post('/edtmissao/:id', async(req, res) => {
 
 admin_rotas.post('/cadadd', eAdmin, (req, res) => {
     var titulo = req.body.titulo
-    var tempo = 12
+    var url = req.body.url
+    var categoria = req.body.categoria
     var pontuacao = req.body.ponto
     var descricao = req.body.descrição
     var skill = req.body.flexRadioDefault
-    console.log(titulo, tempo, pontuacao, descricao, skill)
-    saveMiss(res, titulo, tempo, pontuacao, descricao, skill)
+    console.log(titulo, url, categoria, pontuacao, descricao, skill)
+    saveMiss(res, titulo, url, categoria, pontuacao, descricao, skill)
 })
 
-function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
+function saveMiss(res, titulo, url, categoria, pontuacao, descricao, skill) {
     var erros = []
 
     if (!titulo || typeof titulo == undefined || titulo == null) {
@@ -55,8 +56,8 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
     if (titulo.length < 2) {
         erros.push({ texto: 'titulo muito pequenos' })
     }
-    if (!tempo || typeof tempo == undefined || tempo == null) {
-        erros.push({ texto: 'tempo inválido' })
+    if (!url || typeof url == undefined || url == null) {
+        erros.push({ texto: 'url inválido' })
     }
     if (!pontuacao || typeof pontuacao == undefined || pontuacao == null) {
         erros.push({ texto: 'pontuacao inválido' })
@@ -77,10 +78,11 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
             } else {
                 Missao.create({
                     titulo: titulo,
-                    tempo: tempo,
                     pontuacao: pontuacao,
                     descricao: descricao,
-                    skill: skill
+                    skill: skill,
+                    url: url,
+                    tagId: categoria
                 }).then(() => {
 
                     res.render('admin/pagAdmin', { success_msg: 'Missão criada com sucesso!' })
