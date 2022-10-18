@@ -50,7 +50,7 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
         }).then((missao) => {
             if (missao) {
                 console.log(missao.titulo)
-                res.render('admin/cadastro-missao', { error_msg: 'Já existe usuario com esse email!' })
+                res.render('admin/cadastro-missao', { error_msg: 'Já existe um nome com essa missão!' })
             } else {
                 Missao.create({
                     titulo: titulo,
@@ -60,7 +60,7 @@ function saveMiss(res, titulo, tempo, pontuacao, descricao, skill) {
                     skill: skill
                 }).then(() => {
 
-                    res.render('admin/pagAdmin', { success_msg: 'Usuario adicionado com sucesso!' })
+                    res.render('admin/pagAdmin', { success_msg: 'Missão criada com sucesso!' })
                 }).catch((erro) => {
                     console.log('erro: ' + erro)
                     res.render('admin/cadastro-missao')
