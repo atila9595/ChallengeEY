@@ -10,6 +10,9 @@ const Iniciomiss = db.sequelize.define('iniciomissao', {
     },
     validacaomiss: {
         type: db.Sequelize.BOOLEAN
+    },
+    certificado: {
+        type: db.Sequelize.STRING
     }
 
 })

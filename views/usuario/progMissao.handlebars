@@ -45,8 +45,7 @@
     {{else}}
     <button id="btnFinalizar" data-mdb-toggle="modal" data-mdb-target="#exampleModal3" type="button"
         class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">Finalizar Missão</button>
-    <button id="btnAbandonar" type="button" class="btn btn-warning btn-rounded" data-mdb-ripple-color="dark">Abandonar
-        missão</button>
+    
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -55,6 +54,7 @@
                 <div class="modal-header">
                     <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="/user/progMissaoAtual/{{miss.id}}" method="post">
                 <div class="modal-body">
                     <img id="imgModal" src="/images/imgmodal3.webp" alt="">
                     <h4>Subir certificado</h4>
@@ -62,16 +62,11 @@
                         concluída</p>
 
                     <br>
-
+                    
+                 
                     <div class="form-outline mb-4">
-                        <input type="text" id="typeEmailX-2" class="form-control form-control-lg" />
-                        <label class="form-label" for="typeEmailX-2">Código do certificado</label>
-                    </div>
-
-
-                    <div class="form-outline mb-4">
-                        <input type="text" id="typeEmailX-2" class="form-control form-control-lg" />
-                        <label class="form-label" for="typeEmailX-2">URL do certificado</label>
+                        <input type="text" id="typeEmailX-2" class="form-control form-control-lg" name="certificado" />
+                        <label class="form-label" for="typeEmailX-2">URL ou Código do certificado</label>
                     </div>
 
 
@@ -79,10 +74,12 @@
                 <div class="modal-footer">
                     <button type="button" style="color: #fff;" class="btn btn-danger"
                         data-mdb-dismiss="modal">Cancelar</button>
-                    <a href="/user/progMissaoAtual/{{miss.id}}">
-                        <button type="button" class="btn btn-success">Enviar </button>
-                    </a>
+                    
+                        <button type="submit" class="btn btn-success">Enviar </button>
+                    
                 </div>
+                </form>
+
             </div>
         </div>
     </div>
