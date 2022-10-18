@@ -13,9 +13,9 @@
       AOS.init();
     </script>
     <!--Card de cada missão-->
-  
-  
-      
+  {{#each missusada}}
+    {{missaoId}}
+  {{/each}}  
   {{#each miss}}
     <a href="/user/descMissao/{{id}}">
     <div data-aos="zoom-in" class="col-xl-12 col-md-12">

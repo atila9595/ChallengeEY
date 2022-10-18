@@ -7,18 +7,30 @@ const Iniciomiss = require('../models/iniciomiss-model')
 const TagsUser = require('../models/tagsUser-model')
 const { eUser } = require('../helpers/eUser')
 const { userOrAdmin } = require('../helpers/userOrAdmin')
+const { Op } = require("sequelize");
 
 
 
 
 user_rotas.get('/missoes', userOrAdmin, async(req, res) => {
-    Missao.findAll().then(function(miss) {
-        res.render('usuario/missoes', { miss: miss })
+    var id = req.user.id
+    Iniciomiss.findAll({ where: { usuarioId: id } }).then((missusada) => {
+        idmiss = JSON.stringify(missusada) //[2].missaoId)
+
+        listmissfiltrada(res, missusada)
     })
 
-
-
 })
+
+function listmissfiltrada(res, missusada) {
+
+    //console.log(missusada)
+
+
+    Missao.findAll().then(function(miss) {
+        res.render('usuario/missoes', { miss: miss, missusada: missusada })
+    })
+}
 
 user_rotas.get('/json_miss', eUser, async(req, res) => {
 
@@ -44,11 +56,12 @@ user_rotas.get('/descMissao', eUser, (req, res) => {
     res.render('usuario/descMissao')
 })
 
-user_rotas.get('/progMissaoAtual/:id', eUser, (req, res) => {
+user_rotas.post('/progMissaoAtual/:id', eUser, (req, res) => {
     iduser = req.user.id
     idmiss = req.params.id
-    console.log(idmiss, iduser)
-    Iniciomiss.update({ statusmiss: 'concluido', validacaomiss: true }, { where: { missaoId: idmiss, usuarioId: iduser } }).then(() => {
+    certificado = req.body.certificado
+    console.log('certificado========>', certificado)
+    Iniciomiss.update({ statusmiss: 'concluido', validacaomiss: true, certificado: certificado }, { where: { missaoId: idmiss, usuarioId: iduser } }).then(() => {
         createSkills(idmiss, req, res)
     }).then(() => {
         res.redirect('/user/missoes')
