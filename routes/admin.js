@@ -156,4 +156,16 @@ admin_rotas.get('/regras', eAdmin, (req, res) => {
     res.render('usuario/regras')
 })
 
+admin_rotas.get('/vagas', eAdmin, (req, res) => {
+    res.render('admin/vagasHome')
+})
+
+admin_rotas.get('/cadastroVagas', eAdmin, (req, res) => {
+    res.render('admin/cadastro-vagas')
+})
+
+admin_rotas.get('/descVagas', eAdmin, (req, res) => {
+    res.render('usuario/descVagas')
+})
+
 module.exports = admin_rotas
