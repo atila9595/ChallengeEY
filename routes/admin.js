@@ -13,6 +13,29 @@ admin_rotas.get('/cadmissao', eAdmin, async(req, res) => {
 
 })
 
+admin_rotas.post('/edtmissao/:id', async(req, res) => {
+    miss = req.body
+    var id = req.params.id
+    var titulo = miss.titulo
+    var descricao = miss.descricao
+    var skill = miss.skill
+    var pontuacao = miss.pontuacao
+    console.log(miss, id)
+    await Missao.update({
+        titulo: titulo,
+        pontuacao: pontuacao,
+        descricao: descricao,
+        skill: skill
+    }, {
+        where: {
+            id: id
+        }
+    });
+
+    res.redirect('/admin/pagAdmin')
+
+})
+
 admin_rotas.post('/cadadd', eAdmin, (req, res) => {
     var titulo = req.body.titulo
     var tempo = 12
@@ -107,24 +130,6 @@ function missUser(res, usuario) {
         res.render('admin/pagUsuarios', { usuario: usuario, miss: miss })
     })
 }
-
-/*
-function missUser(res, usuario) {
-    Missao.findAll({
-        include: [{
-            model: Iniciomiss,
-            where: ['id = iduser'],
-            include: [{
-                model: Usuario,
-                where: ['iduser = id']
-            }]
-        }]
-    }).then(function(usuario) {
-        console.log(usuario)
-            //res.render('admin/pagUsuarios', { usuario: usuario, miss: miss })
-    })
-}
-*/
 
 admin_rotas.get('/pagAdmin', eAdmin, async(req, res) => {
 

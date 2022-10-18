@@ -18,29 +18,29 @@
     
         <!---Nome do produto-->
         <h5 style="margin-top: 2%; color: #ffe600;">Titulo da missão:</h5>
-        <form action="/admin/cadadd" method="post">
+        <form action="/admin/edtmissao/{{miss.id}}" method="post">
         <input style="background-color: #2e2e38; color:  #fff; border: 1px solid #ffe600;"  name="titulo" style="margin-top: 2%;" class="form-control" type="text" placeholder="Desenvolvimento com Flutter" value="{{miss.titulo}}">
         <h5 style="margin-top: 2%;color: #ffe600;">Descrição da missão:</h5>
         <!---Descrição do produto-->
-        <textarea name="descrição"  placeholder="Descrição referente ao seu produto" style="resize: none;color:  #fff;height: 150px; margin-top: 2%;background-color: #2e2e38; border: 1px solid #ffe600;" class="form-control" id="exampleFormControlTextarea1" rows="3">{{miss.descricao}}</textarea>
+        <textarea name="descricao"  placeholder="Descrição referente ao seu produto" style="resize: none;color:  #fff;height: 150px; margin-top: 2%;background-color: #2e2e38; border: 1px solid #ffe600;" class="form-control" id="exampleFormControlTextarea1" rows="3">{{miss.descricao}}</textarea>
         <!---Categoria-->
         <h5 style="margin-top: 2%; color: #ffe600;">Selecione a categoria da missão</h5>
             
         <div class="form-check">
-            <input class="form-check-input" type="radio" value="soft-skills" name="flexRadioDefault" id="flexRadioDefault1">
+            <input class="form-check-input" type="radio" value="soft-skills" name="skill" id="flexRadioDefault1">
             <label style="color: #fff;" class="form-check-label" for="flexRadioDefault1">
               Soft Skill
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" value="hardskills" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <input class="form-check-input" type="radio" value="hardskills" name="skill" id="flexRadioDefault2" checked>
             <label style="color: #fff;" class="form-check-label" for="flexRadioDefault2">
               Hard Skill
             </label>
           </div>
     
     <h5 style="margin-top: 2%; color: #ffe600;">Pontuação:</h5>
-    <input name="ponto" style="margin-top: 2%; background-color: #2e2e38;color:  #fff; border: 1px solid #ffe600;" class="form-control" type="text" placeholder="150 pontos" value="{{miss.pontuacao}}">
+    <input name="pontuacao" style="margin-top: 2%; background-color: #2e2e38;color:  #fff; border: 1px solid #ffe600;" class="form-control" type="text" placeholder="150 pontos" value="{{miss.pontuacao}}">
 
            
     
