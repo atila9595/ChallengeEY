@@ -12,7 +12,9 @@
         AOS.init();
     </script>
     <!--Card de cada vaga-->
-    <a href="/user/descVaga">
+
+    {{#each vaga}}
+    <a href="/user/descVaga/{{vaga.id}}">
         <div data-aos="zoom-in" class="col-xl-12 col-md-12">
             <div id="cardaVagas" style="border: 0;" class="card">
                 <div class="card-content">
@@ -22,11 +24,8 @@
                                 <img style="width: 64px;" src="/images/emprego.png" alt="">
                             </div>
                             <div class="media-body">
-                                <h4 id="tituloVagas">Devops Engineer</h4>
-                                <span>Temos o objetivo de colocar a nuvem no coração dos negócios das maiores empresas
-                                    do mundo, criando experiências sob medida, desenvolvendo soluções específicas de
-                                    migração para nuvem com a possibilidade de usufruir o melhor dela.
-                                </span>
+                                <h4 id="tituloVagas">{{vaga.titulo}}</h4>
+                                <span>{{vaga.descricao}}</span>
                             </div>
                         </div>
                     </div>
@@ -35,6 +34,7 @@
         </div>
         </div>
     </a>
+    {{/each}}
 
     <br>
 

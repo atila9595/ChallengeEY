@@ -5,6 +5,7 @@ const Missao = require('../models/missao-model')
 const Skills = require('../models/skills-model')
 const Iniciomiss = require('../models/iniciomiss-model')
 const Vaga = require('../models/vagas-model')
+const VagasUser = require('../models/vagasUser-model')
 const TagsUser = require('../models/tagsUser-model')
 const { eUser } = require('../helpers/eUser')
 const { userOrAdmin } = require('../helpers/userOrAdmin')
@@ -172,16 +173,31 @@ user_rotas.get('/contato', eUser, (req, res) => {
     res.render('usuario/contatos')
 })
 
-user_rotas.get('/listaVagas', eUser, (req, res) => {
-    res.render('usuario/listaVagas')
-})
-
 user_rotas.get('/descVaga', eUser, (req, res) => {
     res.render('usuario/descVagas')
 })
 
 user_rotas.get('/vagaEnviada', eUser, (req, res) => {
-    res.render('usuario/vagaEnviada')
+    var iduser = req.user.id
+    VagasUser.findAll({
+        where: { usuarioId: iduser},
+        include: [
+            { model: Vaga }
+        ]
+    }).then(function(vaga) {
+        res.render('usuario/vagaEnviada', { vaga: vaga })
+    })
+})
+
+user_rotas.get('/addVagaEnviada/:id', eUser, (req, res) => {
+    var iduser = req.user.id
+    var idvaga = req.params.id
+    VagasUser.create({
+        usuarioId: iduser,
+        vagaId: idvaga
+    }).then(() => {
+        res.redirect('/user/vagaEnviada')
+    })
 })
 
 user_rotas.get('/missoesAndamento', eUser, (req, res) => {
@@ -190,7 +206,7 @@ user_rotas.get('/missoesAndamento', eUser, (req, res) => {
 
 user_rotas.get('/listaVagas', eUser, (req, res) => {
     Vaga.findAll().then(function(vaga) {
-        res.render('user/listaVagas', { vaga: vaga })
+        res.render('usuario/listaVagas', { vaga: vaga })
     })
 })
 
