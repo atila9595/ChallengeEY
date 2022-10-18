@@ -4,6 +4,7 @@ const Usuario = require('../models/usuario-model')
 const Missao = require('../models/missao-model')
 const Skills = require('../models/skills-model')
 const Iniciomiss = require('../models/iniciomiss-model')
+const Vaga = require('../models/vagas-model')
 const TagsUser = require('../models/tagsUser-model')
 const { eUser } = require('../helpers/eUser')
 const { userOrAdmin } = require('../helpers/userOrAdmin')
@@ -186,5 +187,22 @@ user_rotas.get('/vagaEnviada', eUser, (req, res) => {
 user_rotas.get('/missoesAndamento', eUser, (req, res) => {
     res.render('usuario/missoesAndamento')
 })
+
+user_rotas.get('/listaVagas', eUser, (req, res) => {
+    Vaga.findAll().then(function(vaga) {
+        res.render('user/listaVagas', { vaga: vaga })
+    })
+})
+
+user_rotas.get('/descVagas/:id', eUser, (req, res) => {
+    var id = req.params.id
+        //console.log(id)
+    Vaga.findByPk(id).then((vaga) => {
+        res.render('usuario/descVagas', { vaga: vaga })
+    }).catch((erro) => {
+        res.send('erro: ' + erro)
+    })
+})
+
 
 module.exports = user_rotas
