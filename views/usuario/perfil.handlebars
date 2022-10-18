@@ -185,4 +185,28 @@
         );
     </script>
 
+    <script>
+            if ({{ user.pontos }} < 3500) {
+                document.getElementById("amareloEy").style.color="#ffe600";
+                document.getElementById("amareloEy2").style.backgroundColor="#ffe600";
+                document.getElementById("cardaMissao2").setAttribute("id", "cardaMissao2");
+            } else if ({{ user.pontos }} >= 3500 && {{ user.pontos }} < 7200) {
+                document.getElementById("amareloEy").style.color="#eb9811";
+                document.getElementById("amareloEy2").style.backgroundColor="#eb9811";
+                document.getElementById("cardaMissao2").setAttribute("id", "cardaMissao3");
+            } else if ({{ user.pontos }} >= 7200 && {{ user.pontos }} < 9800) {
+                document.getElementById("amareloEy").style.color="#70499c";
+                document.getElementById("amareloEy2").style.backgroundColor="#70499c";
+                document.getElementById("cardaMissao2").setAttribute("id", "cardaMissao4");
+            } else if ({{ user.pontos }} >= 9800 && {{ user.pontos }} < 15600) {
+                document.getElementById("amareloEy").style.color="#79c59c";
+                document.getElementById("amareloEy2").style.backgroundColor="#79c59c";
+                document.getElementById("cardaMissao2").setAttribute("id", "cardaMissao5");
+            } else {
+                document.getElementById("amareloEy").style.color="#0c737d";
+                document.getElementById("amareloEy2").style.backgroundColor="#0c737d";
+                document.getElementById("cardaMissao2").setAttribute("id", "cardaMissao6");
+            }
+  </script>
+
 </section>
