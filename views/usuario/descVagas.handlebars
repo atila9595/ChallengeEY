@@ -40,10 +40,13 @@
     <p id="descMissaotxt">Temos o objetivo de colocar a nuvem no coração dos negócios das maiores empresas do mundo,
         criando experiências sob medida, desenvolvendo soluções específicas de migração para nuvem com a possibilidade
         de usufruir o melhor dela.</p>
+        
+    {{#if user.admin}}
 
+
+    {{else}}
     <button data-mdb-toggle="modal" data-mdb-target="#exampleModal" id="btnIniciar" type="button"
         class="btn btn-primary btn-rounded" data-mdb-ripple-color="dark">Enviar Candidatura</button>
-
     <br>
     <br>
     <!-- Modal -->
@@ -68,5 +71,6 @@
             </div>
         </div>
     </div>
+    {{/if}}
 
 </section>
