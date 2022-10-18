@@ -117,4 +117,8 @@ user_rotas.get('/vagaEnviada', eUser, (req, res) => {
     res.render('usuario/vagaEnviada')
 })
 
+user_rotas.get('/missoesAndamento', eUser, (req, res) => {
+    res.render('usuario/missoesAndamento')
+})
+
 module.exports = user_rotas
